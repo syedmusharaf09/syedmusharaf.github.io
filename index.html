@@ -4,24 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Musharaf A — Certificate of Professional Record</title>
+    <title>Syed Musharaf A — HR Operations &amp; Finance Professional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --navy: #101B2D;
-            --navy-soft: #16233A;
-            --ivory: #FBF8F1;
-            --ivory-dim: #EFE9DA;
-            --gold: #B8933F;
-            --gold-bright: #D4AF6A;
-            --steel: #3E5670;
-            --slate: #5C6B7A;
-            --wine: #7A3B3B;
-            --font-display: 'Playfair Display', serif;
+            --bg: #0F1319;
+            --bg-panel: #12171F;
+            --line: #242B35;
+            --text: #EDEFF2;
+            --text-dim: #98A2B0;
+            --text-faint: #5C6673;
+            --gold: #D9A44E;
+            --gold-soft: rgba(217, 164, 78, 0.12);
+            --green: #5FC98A;
             --font-body: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
@@ -48,565 +47,688 @@
         }
 
         body {
-            background: var(--navy);
-            color: var(--navy);
+            background: var(--bg);
+            color: var(--text);
             font-family: var(--font-body);
-            padding: clamp(1.2rem, 4vw, 3.5rem) clamp(1rem, 3vw, 2rem);
-        }
-
-        ::selection {
-            background: var(--gold-bright);
-            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         a {
             color: inherit;
         }
 
+        ::selection {
+            background: var(--gold);
+            color: #12171F;
+        }
+
         :focus-visible {
-            outline: 2px solid var(--gold-bright);
+            outline: 2px solid var(--gold);
             outline-offset: 3px;
         }
 
-        /* Ambient navy backdrop texture */
-        body {
-            background-image:
-                radial-gradient(circle at 15% 10%, rgba(212, 175, 106, 0.06), transparent 45%),
-                radial-gradient(circle at 85% 90%, rgba(212, 175, 106, 0.05), transparent 45%);
+        /* subtle grid backdrop */
+        .layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 100vh;
         }
 
-        .frame-outer {
-            max-width: 920px;
-            margin: 0 auto;
-            border: 1px solid rgba(212, 175, 106, 0.35);
-            padding: 10px;
+        @media (max-width:900px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .frame-inner {
-            background: var(--ivory);
-            border: 1px solid var(--gold);
-            position: relative;
-            padding: clamp(2rem, 5vw, 4rem);
+        /* ---------- Sidebar ---------- */
+        .sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            padding: 2.6rem 2rem;
+            border-right: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .frame-inner::before {
-            content: "";
-            position: absolute;
-            inset: 10px;
-            border: 1px solid rgba(184, 147, 63, 0.4);
-            pointer-events: none;
+        @media (max-width:900px) {
+            .sidebar {
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+            }
         }
 
-        /* corner flourishes */
-        .corner {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            border: 1.5px solid var(--gold);
-            opacity: 0.9;
+        .id-block {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.3rem;
         }
 
-        .corner.tl {
-            top: -1px;
-            left: -1px;
-            border-right: none;
-            border-bottom: none;
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 0 0 rgba(95, 201, 138, 0.5);
+            animation: pulse 2.2s infinite;
+            flex-shrink: 0;
         }
 
-        .corner.tr {
-            top: -1px;
-            right: -1px;
-            border-left: none;
-            border-bottom: none;
-        }
-
-        .corner.bl {
-            bottom: -1px;
-            left: -1px;
-            border-right: none;
-            border-top: none;
-        }
-
-        .corner.br {
-            bottom: -1px;
-            right: -1px;
-            border-left: none;
-            border-top: none;
-        }
-
-        /* ---------- Seal ---------- */
-        .seal-wrap {
-            position: absolute;
-            top: clamp(1.4rem, 4vw, 2.6rem);
-            right: clamp(1.4rem, 4vw, 3rem);
-            width: 96px;
-            height: 96px;
-            opacity: 0;
-            animation: seal-stamp 0.6s cubic-bezier(.2, .85, .3, 1.15) 0.3s forwards;
-        }
-
-        @keyframes seal-stamp {
+        @keyframes pulse {
             0% {
-                opacity: 0;
-                transform: scale(1.6) rotate(8deg);
+                box-shadow: 0 0 0 0 rgba(95, 201, 138, 0.45);
             }
 
-            65% {
-                opacity: 1;
-                transform: scale(0.95) rotate(-3deg);
+            70% {
+                box-shadow: 0 0 0 7px rgba(95, 201, 138, 0);
             }
 
             100% {
-                opacity: 1;
-                transform: scale(1) rotate(0deg);
+                box-shadow: 0 0 0 0 rgba(95, 201, 138, 0);
             }
         }
 
-        @media (max-width:600px) {
-            .seal-wrap {
+        .id-block .name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
+        }
+
+        .id-title {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            margin-bottom: 2.4rem;
+        }
+
+        nav.side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        nav.side-nav a {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            text-decoration: none;
+            padding: 0.55rem 0.6rem;
+            border-left: 2px solid transparent;
+            color: var(--text-dim);
+            font-size: 0.92rem;
+            transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+            border-radius: 2px;
+        }
+
+        nav.side-nav a .num {
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--text-faint);
+        }
+
+        nav.side-nav a:hover,
+        nav.side-nav a:focus-visible {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        nav.side-nav a.active {
+            color: var(--text);
+            border-left-color: var(--gold);
+            background: var(--gold-soft);
+        }
+
+        nav.side-nav a.active .num {
+            color: var(--gold);
+        }
+
+        .sidebar-footer {
+            margin-top: 2.4rem;
+        }
+
+        .avail-line {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .avail-line .status-dot {
+            margin-top: 1px;
+        }
+
+        .contact-icons {
+            display: flex;
+            gap: 0.7rem;
+        }
+
+        .contact-icons a {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .contact-icons a:hover,
+        .contact-icons a:focus-visible {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .contact-icons svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width:900px) {
+            nav.side-nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .sidebar-footer {
                 display: none;
             }
         }
 
-        /* ---------- Header block ---------- */
-        .doc-header {
-            text-align: center;
-            padding-bottom: 2rem;
-            margin-bottom: 2.2rem;
-            border-bottom: 2px solid var(--gold);
+        /* ---------- Main content ---------- */
+        main {
+            padding: 3rem clamp(1.4rem, 4vw, 4rem);
         }
 
-        .doc-header .kicker {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--gold);
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--line);
+            max-width: 760px;
         }
 
-        .doc-header h1 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: clamp(1.8rem, 4.4vw, 2.6rem);
-            color: var(--navy);
-            margin: 0.6rem 0 0.5rem;
-            letter-spacing: 0.01em;
-        }
-
-        .doc-header .role-title {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            color: var(--steel);
-            letter-spacing: 0.02em;
-        }
-
-        /* ---------- Declarations table (policy schedule feel) ---------- */
-        .declarations {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border: 1px solid var(--ivory-dim);
-            margin-bottom: 2.6rem;
-        }
-
-        .declarations div {
-            padding: 0.9rem 1.1rem;
-            border-right: 1px solid var(--ivory-dim);
-            border-bottom: 1px solid var(--ivory-dim);
-        }
-
-        .declarations div:nth-child(3n) {
-            border-right: none;
-        }
-
-        .declarations div:nth-last-child(-n+3) {
+        section:last-of-type {
             border-bottom: none;
         }
 
-        .declarations .k {
-            display: block;
-            font-family: var(--font-mono);
-            font-size: 0.62rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 0.35rem;
-        }
-
-        .declarations .v {
-            font-family: var(--font-mono);
-            font-size: 0.86rem;
-            color: var(--navy);
-        }
-
-        @media (max-width:640px) {
-            .declarations {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .declarations div:nth-child(3n) {
-                border-right: 1px solid var(--ivory-dim);
-            }
-
-            .declarations div:nth-child(2n) {
-                border-right: none;
-            }
-        }
-
-        /* ---------- Article sections ---------- */
-        article {
-            margin-bottom: 2.8rem;
-        }
-
-        article:last-of-type {
-            margin-bottom: 1.5rem;
-        }
-
-        .article-head {
+        .eyebrow-row {
             display: flex;
-            align-items: baseline;
-            gap: 0.8rem;
-            margin-bottom: 1.3rem;
-        }
-
-        .article-head .numeral {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--gold);
-            white-space: nowrap;
-        }
-
-        .article-head h2 {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1.25rem;
-            color: var(--navy);
-        }
-
-        .article-head::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: var(--ivory-dim);
-        }
-
-        .clause-text {
-            font-size: 0.98rem;
-            line-height: 1.72;
-            color: var(--steel);
-            max-width: 68ch;
-        }
-
-        /* ---------- Schedule of experience ---------- */
-        .schedule-entry {
-            padding: 1.3rem 0;
-            border-bottom: 1px solid var(--ivory-dim);
-        }
-
-        .schedule-entry:last-child {
-            border-bottom: none;
-        }
-
-        .schedule-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0.5rem 1rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .schedule-top .position {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1.08rem;
-            color: var(--navy);
-        }
-
-        .schedule-top .period {
+            align-items: center;
+            gap: 0.7rem;
             font-family: var(--font-mono);
-            font-size: 0.74rem;
+            font-size: 0.78rem;
             color: var(--gold);
-            white-space: nowrap;
-        }
-
-        .schedule-entry .insurer {
-            font-size: 0.88rem;
-            color: var(--slate);
-            margin-bottom: 0.8rem;
-            font-style: italic;
-        }
-
-        .schedule-entry ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .schedule-entry li {
-            position: relative;
-            padding-left: 1.15rem;
-            font-size: 0.92rem;
-            color: var(--steel);
-        }
-
-        .schedule-entry li::before {
-            content: "§";
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 0.85em;
-        }
-
-        /* ---------- Endorsements (skills) ---------- */
-        .endorsement-group {
             margin-bottom: 1.6rem;
         }
 
-        .endorsement-group:last-child {
-            margin-bottom: 0;
+        .eyebrow-row::after {
+            content: "";
+            flex: 0 0 40px;
+            height: 1px;
+            background: var(--line);
         }
 
-        .endorsement-group .g-title {
+        /* ---------- Hero / About ---------- */
+        #about {
+            padding-top: 1rem;
+        }
+
+        .hero-tags-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             font-family: var(--font-mono);
-            font-size: 0.66rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            font-size: 0.8rem;
             color: var(--gold);
-            display: block;
-            margin-bottom: 0.6rem;
+            background: var(--gold-soft);
+            border: 1px solid rgba(217, 164, 78, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 1.6rem;
         }
 
-        .endorsement-chips {
+        h1.hero-title {
+            font-size: clamp(2rem, 4.4vw, 2.9rem);
+            font-weight: 800;
+            line-height: 1.18;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.3rem;
+        }
+
+        h1.hero-title .accent {
+            color: var(--gold);
+        }
+
+        .hero-desc {
+            font-size: 1.02rem;
+            color: var(--text-dim);
+            max-width: 64ch;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-desc b {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .badge-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.7rem;
+            margin-bottom: 2rem;
         }
 
-        .endorsement-chips span {
+        .badge {
             font-family: var(--font-mono);
-            font-size: 0.76rem;
-            color: var(--navy);
-            background: var(--ivory);
-            border: 1px solid var(--steel);
-            padding: 0.28rem 0.62rem;
+            font-size: 0.82rem;
+            color: var(--text-dim);
+            border: 1px solid var(--line);
+            background: var(--bg-panel);
+            padding: 0.55rem 0.9rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
         }
 
-        .conduct-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 0.6rem 1.4rem;
-            margin-top: 1.6rem;
-            padding-top: 1.4rem;
-            border-top: 1px dashed var(--ivory-dim);
+        .cta-row {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
         }
 
-        .conduct-list div {
-            font-size: 0.88rem;
-            color: var(--steel);
-            padding-left: 1rem;
-            position: relative;
+        .btn {
+            font-family: var(--font-mono);
+            font-size: 0.86rem;
+            padding: 0.8rem 1.4rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.15s ease, opacity 0.15s ease;
         }
 
-        .conduct-list div::before {
-            content: "·";
-            position: absolute;
-            left: 0;
-            color: var(--gold);
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #12171F;
+            font-weight: 600;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--line);
+            color: var(--text);
+        }
+
+        /* ---------- Section headers ---------- */
+        h2.sec-title {
+            font-size: 1.5rem;
             font-weight: 700;
+            margin-bottom: 1.8rem;
         }
 
-        /* ---------- Credentials ---------- */
-        .credential {
-            padding: 1.1rem 0;
-            border-bottom: 1px solid var(--ivory-dim);
+        /* ---------- Education ---------- */
+        .edu-card {
+            padding: 1.3rem 0;
+            border-bottom: 1px solid var(--line);
         }
 
-        .credential:last-child {
+        .edu-card:last-child {
             border-bottom: none;
         }
 
-        .credential-top {
+        .edu-top {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 0.4rem 1rem;
+            margin-bottom: 0.3rem;
         }
 
-        .credential .title {
-            font-family: var(--font-display);
+        .edu-degree {
             font-weight: 600;
             font-size: 1rem;
-            color: var(--navy);
         }
 
-        .credential .place {
-            font-size: 0.86rem;
-            color: var(--slate);
-            margin-top: 0.15rem;
-        }
-
-        .credential .yrs {
+        .edu-years {
             font-family: var(--font-mono);
-            font-size: 0.74rem;
+            font-size: 0.78rem;
             color: var(--gold);
             white-space: nowrap;
         }
 
-        .credential p.desc {
-            margin-top: 0.5rem;
-            font-size: 0.88rem;
-            color: var(--steel);
-            max-width: 66ch;
+        .edu-school {
+            color: var(--text-dim);
+            font-size: 0.92rem;
         }
 
-        /* ---------- Languages endorsement ---------- */
-        .lang-list {
+        /* ---------- Experience ---------- */
+        .exp-card {
+            padding: 1.6rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .exp-card:first-child {
+            padding-top: 0;
+        }
+
+        .exp-card:last-child {
+            border-bottom: none;
+        }
+
+        .exp-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.4rem 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .exp-period {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        .exp-org {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .exp-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .exp-card li {
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.94rem;
+            color: var(--text-dim);
+        }
+
+        .exp-card li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.8em;
+        }
+
+        /* ---------- Skills ---------- */
+        .skill-group {
+            margin-bottom: 1.6rem;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-group .g-label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            display: block;
+            margin-bottom: 0.7rem;
+        }
+
+        .chip-row {
             display: flex;
             flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+
+        .chip {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text);
+            background: var(--bg-panel);
+            border: 1px solid var(--line);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        .soft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 0.9rem 1.4rem;
+        }
+
+        .soft-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.94rem;
+            color: var(--text-dim);
+        }
+
+        .soft-item::before {
+            content: "◆";
+            color: var(--gold);
+            font-size: 0.55rem;
+            margin-top: 0.45em;
+        }
+
+        /* ---------- Achievements / Projects ---------- */
+        .item-card {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .item-card:last-child {
+            border-bottom: none;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 0.98rem;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
             gap: 0.5rem;
         }
 
-        .lang-list span {
-            font-family: var(--font-mono);
-            font-size: 0.78rem;
-            color: var(--navy);
-            border: 1px solid var(--gold);
-            padding: 0.3rem 0.7rem;
+        .item-title::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
         }
 
-        /* ---------- Signature block ---------- */
-        .signature-block {
-            margin-top: 2.6rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--gold);
+        .item-desc {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            max-width: 66ch;
+        }
+
+        /* ---------- Languages within contact section ---------- */
+        .lang-row {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
             flex-wrap: wrap;
-            gap: 1.6rem;
+            gap: 0.55rem;
+            margin-top: 0.6rem;
         }
 
-        .signature-block .sig {
-            font-family: var(--font-display);
-            font-style: italic;
-            font-size: 1.5rem;
-            color: var(--navy);
-            border-bottom: 1px solid var(--navy);
-            padding-bottom: 0.3rem;
-            display: inline-block;
-        }
-
-        .signature-block .sig-label {
-            display: block;
-            font-family: var(--font-mono);
-            font-size: 0.64rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--slate);
+        /* ---------- Contact ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.4rem;
             margin-top: 0.4rem;
+            margin-bottom: 2rem;
         }
 
-        .contact-block {
-            text-align: right;
+        .contact-item .label {
             font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--steel);
-            line-height: 1.9;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin-bottom: 0.4rem;
         }
 
-        .contact-block a {
-            color: var(--navy);
+        .contact-item .value {
+            font-size: 0.98rem;
+        }
+
+        .contact-item a {
             text-decoration: none;
-            border-bottom: 1px solid var(--gold);
+            border-bottom: 1px solid var(--line);
+            transition: border-color 0.2s ease, color 0.2s ease;
         }
 
-        .contact-block a:hover,
-        .contact-block a:focus-visible {
+        .contact-item a:hover,
+        .contact-item a:focus-visible {
             color: var(--gold);
+            border-color: var(--gold);
         }
 
-        @media (max-width:600px) {
-            .signature-block {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .contact-block {
-                text-align: left;
-            }
+        footer.page-footer {
+            padding: 2rem clamp(1.4rem, 4vw, 4rem) 3rem;
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            color: var(--text-faint);
+            max-width: 760px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="frame-outer">
-        <div class="frame-inner">
-            <span class="corner tl"></span>
-            <span class="corner tr"></span>
-            <span class="corner bl"></span>
-            <span class="corner br"></span>
-
-            <div class="seal-wrap" aria-hidden="true">
-                <svg viewBox="0 0 100 100" width="100%" height="100%">
-                    <circle cx="50" cy="50" r="46" fill="none" stroke="#B8933F" stroke-width="1.5" />
-                    <circle cx="50" cy="50" r="38" fill="none" stroke="#B8933F" stroke-width="0.75" />
-                    <path id="seal-path" d="M 50,12 A 38,38 0 1 1 49.9,12" fill="none" />
-                    <text font-family="'JetBrains Mono', monospace" font-size="6.4" fill="#B8933F" letter-spacing="1.5">
-                        <textPath href="#seal-path" startOffset="1%">CERTIFIED TRUE RECORD • DUBAI UAE</textPath>
-                    </text>
-                    <text x="50" y="47" text-anchor="middle" font-family="'Playfair Display', serif" font-weight="700"
-                        font-size="12" fill="#B8933F">S.M.</text>
-                    <text x="50" y="60" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="5.5"
-                        fill="#B8933F" letter-spacing="1">2026</text>
-                </svg>
-            </div>
-
-            <header class="doc-header">
-                <span class="kicker">Certificate of Professional Record</span>
-                <h1>Syed Musharaf A</h1>
-                <p class="role-title">HR Operations · Finance &amp; Accounting · Insurance Processing</p>
-            </header>
-
-            <div class="declarations">
-                <div><span class="k">Record No.</span><span class="v">HR-FIN-INS-01</span></div>
-                <div><span class="k">Territory</span><span class="v">Dubai, UAE</span></div>
-                <div><span class="k">Experience</span><span class="v">5 Yrs 9 Mos</span></div>
-                <div><span class="k">Current Position</span><span class="v">General Accountant</span></div>
-                <div><span class="k">Education</span><span class="v">MBA, HR &amp; Finance</span></div>
-                <div><span class="k">Status</span><span class="v">Active — Available</span></div>
-            </div>
-
-            <article id="declarations-article">
-                <div class="article-head">
-                    <span class="numeral">Article I</span>
-                    <h2>Declarations</h2>
+    <div class="layout">
+        <aside class="sidebar">
+            <div>
+                <div class="id-block">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span class="name">Syed Musharaf A</span>
                 </div>
-                <p class="clause-text">
-                    The undersigned is an MBA graduate specializing in Human Resources and Finance, holding over five
-                    years and nine months of professional experience across HR Operations, Accounting and Insurance
-                    Processing. Skilled in employee lifecycle management, payroll support, HR administration, financial
-                    record maintenance, reconciliations, insurance claims processing and client support. Proficient in
-                    MS Office Suite, Tally ERP, Fresa, Oracle HCM, HRIS and accounting systems, with demonstrated
-                    ability to maintain accurate records, ensure policy compliance, handle confidential information and
-                    manage multiple priorities in fast-paced environments.
+                <div class="id-title">HR Operations &amp; Finance</div>
+
+                <nav class="side-nav" aria-label="Section navigation">
+                    <ul>
+                        <li><a href="#about" class="active"><span class="num">01</span>About</a></li>
+                        <li><a href="#education"><span class="num">02</span>Education</a></li>
+                        <li><a href="#experience"><span class="num">03</span>Experience</a></li>
+                        <li><a href="#hard-skills"><span class="num">04</span>Hard Skills</a></li>
+                        <li><a href="#soft-skills"><span class="num">05</span>Soft Skills</a></li>
+                        <li><a href="#achievements"><span class="num">06</span>Achievements</a></li>
+                        <li><a href="#projects"><span class="num">07</span>Academic Projects</a></li>
+                        <li><a href="#contact"><span class="num">08</span>Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="avail-line">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Open to opportunities
+                </div>
+                <div class="contact-icons">
+                    <a href="mailto:syedmusharaf936@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M3 6h18v12H3z" />
+                            <path d="M3 7l9 6 9-6" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/syed-musharaf-56475a208" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 0 1 4 0V17M11 17v-7" />
+                        </svg>
+                    </a>
+                    <a href="tel:+971564268547" aria-label="Phone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path
+                                d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+
+            <section id="about">
+                <span class="hero-tags-top">🤝 Open now · HR · Accounting · Finance · Business Operations</span>
+                <h1 class="hero-title">Hey, I'm Syed Musharaf —<br>an <span class="accent">HR &amp; Finance</span>
+                    professional.</h1>
+                <p class="hero-desc">
+                    I keep employee lifecycles, financial records and insurance claims running accurately — <b>5+
+                        years</b> across HR Operations, Accounting and Insurance Processing, including US HR operations
+                    at Eurofins and UK/UAE insurance operations at Mphasis. Based in Hor Al Anz, <b>Dubai, UAE</b>.
                 </p>
-            </article>
 
-            <article id="schedule-article">
-                <div class="article-head">
-                    <span class="numeral">Article II</span>
-                    <h2>Schedule of Experience</h2>
+                <div class="badge-row">
+                    <span class="badge">📍 Based in Dubai, UAE</span>
+                    <span class="badge">🎓 MBA — HR &amp; Finance</span>
+                    <span class="badge">🧾 5+ Years Experience</span>
+                    <span class="badge">💼 Currently: General Accountant</span>
                 </div>
 
-                <div class="schedule-entry">
-                    <div class="schedule-top">
-                        <span class="position">General Accountant</span>
-                        <span class="period">Feb 2025 — Present</span>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="mailto:syedmusharaf936@gmail.com">Say hello →</a>
+                    <a class="btn btn-secondary" href="#experience">See my experience</a>
+                </div>
+            </section>
+
+            <section id="education">
+                <div class="eyebrow-row">02 / Education</div>
+                <h2 class="sec-title">Education</h2>
+
+                <div class="edu-card">
+                    <div class="edu-top">
+                        <span class="edu-degree">Master of Business Administration (MBA) — HR &amp; Finance</span>
+                        <span class="edu-years">2017 — 2019</span>
                     </div>
-                    <div class="insurer">Marakish Express Cargo, Dubai, UAE</div>
+                    <div class="edu-school">PPG Business School, Coimbatore · Anna University</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-top">
+                        <span class="edu-degree">Bachelor of Commerce (BCom) — Computer Application</span>
+                        <span class="edu-years">2014 — 2017</span>
+                    </div>
+                    <div class="edu-school">Erode Arts and Science College · Bharathiar University</div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <div class="eyebrow-row">03 / Experience</div>
+                <h2 class="sec-title">Experience</h2>
+
+                <div class="exp-card">
+                    <div class="exp-top">
+                        <span class="exp-role">General Accountant</span>
+                        <span class="exp-period">Feb 2025 — Present</span>
+                    </div>
+                    <div class="exp-org">Marakish Express Cargo · Dubai, UAE</div>
                     <ul>
                         <li>Streamlined day-to-day accounting operations, managing invoice processing, financial data
                             entry and timely account reconciliations in compliance with organizational standards.</li>
@@ -621,12 +743,12 @@
                     </ul>
                 </div>
 
-                <div class="schedule-entry">
-                    <div class="schedule-top">
-                        <span class="position">Process Associate — US HR Operations</span>
-                        <span class="period">May 2022 — May 2024</span>
+                <div class="exp-card">
+                    <div class="exp-top">
+                        <span class="exp-role">Process Associate — US HR Operations</span>
+                        <span class="exp-period">May 2022 — May 2024</span>
                     </div>
-                    <div class="insurer">Eurofins (BPO) India Pvt Ltd, Bengaluru, India</div>
+                    <div class="exp-org">Eurofins (BPO) India Pvt Ltd · Bengaluru, India</div>
                     <ul>
                         <li>Executed end-to-end employee lifecycle processes for US operations: onboarding, transitions,
                             offboarding and termination.</li>
@@ -641,12 +763,12 @@
                     </ul>
                 </div>
 
-                <div class="schedule-entry">
-                    <div class="schedule-top">
-                        <span class="position">Sr. Transaction Processing Officer</span>
-                        <span class="period">Oct 2019 — Jan 2022</span>
+                <div class="exp-card">
+                    <div class="exp-top">
+                        <span class="exp-role">Sr. Transaction Processing Officer</span>
+                        <span class="exp-period">Oct 2019 — Jan 2022</span>
                     </div>
-                    <div class="insurer">Mphasis Ltd, Bengaluru, India</div>
+                    <div class="exp-org">Mphasis Ltd · Bengaluru, India</div>
                     <ul>
                         <li>Supported UK Motor and UAE Property insurance operations: quotation preparation, renewal
                             management and mid-term adjustments.</li>
@@ -660,117 +782,166 @@
                             integrity.</li>
                     </ul>
                 </div>
-            </article>
+            </section>
 
-            <article id="endorsements-article">
-                <div class="article-head">
-                    <span class="numeral">Article III</span>
-                    <h2>Endorsements — Skills</h2>
-                </div>
+            <section id="hard-skills">
+                <div class="eyebrow-row">04 / Hard Skills</div>
+                <h2 class="sec-title">Hard Skills</h2>
 
-                <div class="endorsement-group">
-                    <span class="g-title">Systems &amp; Software</span>
-                    <div class="endorsement-chips">
-                        <span>Oracle HCM</span><span>HRIS</span><span>Tally ERP</span><span>Fresa</span>
-                        <span>Excel</span><span>Word</span><span>PowerPoint</span><span>Outlook</span>
+                <div class="skill-group">
+                    <span class="g-label">HR Systems</span>
+                    <div class="chip-row">
+                        <span class="chip">Oracle HCM</span><span class="chip">HRIS</span>
                     </div>
                 </div>
-                <div class="endorsement-group">
-                    <span class="g-title">HR &amp; Accounting Functions</span>
-                    <div class="endorsement-chips">
-                        <span>Employee Lifecycle Mgmt</span><span>Payroll Support</span><span>Benefits Admin</span>
-                        <span>Accounts Payable</span><span>Accounts Receivable</span><span>General Ledger</span>
-                        <span>Reconciliation</span>
+                <div class="skill-group">
+                    <span class="g-label">Accounting Software</span>
+                    <div class="chip-row">
+                        <span class="chip">Tally ERP</span><span class="chip">Fresa</span>
                     </div>
                 </div>
-                <div class="endorsement-group">
-                    <span class="g-title">Insurance Operations</span>
-                    <div class="endorsement-chips">
-                        <span>Claims Processing</span><span>Renewals Management</span><span>Mid-Term Adjustments</span>
+                <div class="skill-group">
+                    <span class="g-label">MS Office Suite</span>
+                    <div class="chip-row">
+                        <span class="chip">Excel</span><span class="chip">Word</span><span
+                            class="chip">PowerPoint</span><span class="chip">Outlook</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="g-label">HR Functions</span>
+                    <div class="chip-row">
+                        <span class="chip">Employee Data Mgmt</span><span class="chip">Onboarding &amp;
+                            Offboarding</span>
+                        <span class="chip">Attendance Mgmt</span><span class="chip">Payroll Support</span><span
+                            class="chip">Benefits Admin</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="g-label">Accounting Functions</span>
+                    <div class="chip-row">
+                        <span class="chip">Accounts Payable</span><span class="chip">Accounts Receivable</span>
+                        <span class="chip">General Ledger</span><span class="chip">Financial Documentation</span><span
+                            class="chip">Reconciliation</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="g-label">Insurance Operations</span>
+                    <div class="chip-row">
+                        <span class="chip">Claims Processing</span><span class="chip">Renewals Management</span><span
+                            class="chip">Mid-Term Adjustments</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <span class="g-label">Administrative</span>
+                    <div class="chip-row">
+                        <span class="chip">Data Entry</span><span class="chip">Documentation Mgmt</span><span
+                            class="chip">Record Keeping</span><span class="chip">Report Preparation</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="soft-skills">
+                <div class="eyebrow-row">05 / Soft Skills</div>
+                <h2 class="sec-title">Soft Skills</h2>
+                <div class="soft-grid">
+                    <div class="soft-item">Leadership &amp; Communication</div>
+                    <div class="soft-item">Problem Solving, Critical Thinking &amp; Decision Making</div>
+                    <div class="soft-item">Interpersonal Skills &amp; Team Collaboration</div>
+                    <div class="soft-item">Analytical Thinking &amp; Conflict Resolution</div>
+                    <div class="soft-item">Organizational Skills, Time Management &amp; Attention to Detail</div>
+                    <div class="soft-item">Adaptability, Multitasking &amp; Continuous Learning</div>
+                </div>
+            </section>
+
+            <section id="achievements">
+                <div class="eyebrow-row">06 / Achievements</div>
+                <h2 class="sec-title">Achievements</h2>
+                <div class="item-card">
+                    <div class="item-title">Tally ERP 9 — Technical Certification</div>
+                    <div class="item-desc">Earned a professional certification validating specialized competence in
+                        digital financial accounting, ledger maintenance and corporate financial reporting.</div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="eyebrow-row">07 / Academic Projects</div>
+                <h2 class="sec-title">Academic Projects</h2>
+                <div class="item-card">
+                    <div class="item-title">HR Research Project — Employee Safety &amp; Welfare</div>
+                    <div class="item-desc">Executed an in-depth MBA study on Employee Safety and Welfare at Penta Auto
+                        Equipments Pvt Ltd; designed employee surveys and conducted stakeholder interviews to identify
+                        workplace hazards, using statistical analysis to deliver actionable data-driven insights for
+                        organizational well-being.</div>
+                </div>
+                <div class="item-card">
+                    <div class="item-title">MBA Summer Internship — Malabar Cements Ltd</div>
+                    <div class="item-desc">Completed a comprehensive operational internship analyzing core corporate
+                        functions; designed targeted questionnaires and performed cross-departmental workplace
+                        observations spanning Finance, Marketing, Production, Procurement and Logistics workflows.</div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="eyebrow-row">08 / Contact</div>
+                <h2 class="sec-title">Contact</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="label">Email</div>
+                        <div class="value"><a href="mailto:syedmusharaf936@gmail.com">syedmusharaf936@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Phone</div>
+                        <div class="value">+971 0564268547</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">LinkedIn</div>
+                        <div class="value"><a href="https://www.linkedin.com/in/syed-musharaf-56475a208" target="_blank"
+                                rel="noopener">syed-musharaf-56475a208</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Location</div>
+                        <div class="value">Hor Al Anz, Dubai, UAE</div>
                     </div>
                 </div>
 
-                <div class="conduct-list">
-                    <div>Leadership &amp; Communication</div>
-                    <div>Problem Solving &amp; Critical Thinking</div>
-                    <div>Interpersonal Skills &amp; Team Collaboration</div>
-                    <div>Analytical Thinking &amp; Conflict Resolution</div>
-                    <div>Organizational Skills &amp; Time Management</div>
-                    <div>Adaptability &amp; Multitasking</div>
-                </div>
-            </article>
-
-            <article id="credentials-article">
-                <div class="article-head">
-                    <span class="numeral">Article IV</span>
-                    <h2>Credentials</h2>
-                </div>
-
-                <div class="credential">
-                    <div class="credential-top">
-                        <span class="title">Master of Business Administration (MBA) — HR &amp; Finance</span>
-                        <span class="yrs">2017 — 2019</span>
+                <div class="contact-item">
+                    <div class="label">Languages</div>
+                    <div class="lang-row">
+                        <span class="chip">English</span><span class="chip">Hindi</span><span
+                            class="chip">Tamil</span><span class="chip">Malayalam</span><span class="chip">Urdu</span>
                     </div>
-                    <div class="place">PPG Business School, Coimbatore · Anna University</div>
                 </div>
-                <div class="credential">
-                    <div class="credential-top">
-                        <span class="title">Bachelor of Commerce (BCom) — Computer Application</span>
-                        <span class="yrs">2014 — 2017</span>
-                    </div>
-                    <div class="place">Erode Arts and Science College · Bharathiar University</div>
-                </div>
-                <div class="credential">
-                    <div class="credential-top">
-                        <span class="title">HR Research Project</span>
-                    </div>
-                    <p class="desc">In-depth MBA study on Employee Safety and Welfare at Penta Auto Equipments Pvt Ltd —
-                        designed employee surveys and conducted stakeholder interviews to identify workplace hazards,
-                        using statistical analysis for actionable insights.</p>
-                </div>
-                <div class="credential">
-                    <div class="credential-top">
-                        <span class="title">MBA Summer Internship</span>
-                    </div>
-                    <p class="desc">Operational internship at Malabar Cements Ltd analyzing core corporate functions —
-                        designed questionnaires and performed cross-departmental observations across Finance, Marketing,
-                        Production, Procurement and Logistics.</p>
-                </div>
-                <div class="credential">
-                    <div class="credential-top">
-                        <span class="title">Tally ERP 9 — Technical Certification</span>
-                    </div>
-                    <p class="desc">Validated specialized competence in digital financial accounting, ledger maintenance
-                        and corporate financial reporting.</p>
-                </div>
-            </article>
+            </section>
 
-            <article id="languages-article">
-                <div class="article-head">
-                    <span class="numeral">Article V</span>
-                    <h2>Languages</h2>
-                </div>
-                <div class="lang-list">
-                    <span>English</span><span>Hindi</span><span>Tamil</span><span>Malayalam</span><span>Urdu</span>
-                </div>
-            </article>
-
-            <div class="signature-block">
-                <div>
-                    <span class="sig">Syed Musharaf A</span>
-                    <span class="sig-label">Authorized signature</span>
-                </div>
-                <div class="contact-block">
-                    <div><a href="mailto:syedmusharaf936@gmail.com">syedmusharaf936@gmail.com</a></div>
-                    <div>+971 0564268547</div>
-                    <div><a href="https://www.linkedin.com/in/syed-musharaf-56475a208" target="_blank"
-                            rel="noopener">linkedin.com/in/syed-musharaf-56475a208</a></div>
-                    <div>Hor Al Anz, Dubai, UAE</div>
-                </div>
-            </div>
-
-        </div>
+        </main>
     </div>
+
+    <footer class="page-footer">© Syed Musharaf A · Built 2026</footer>
+
+    <script>
+        // Highlight the active sidebar link based on scroll position
+        const sections = document.querySelectorAll('main section[id]');
+        const links = document.querySelectorAll('.side-nav a');
+
+        const setActive = (id) => {
+            links.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setActive(entry.target.id);
+                    }
+                });
+            }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+            sections.forEach(sec => observer.observe(sec));
+        }
+    </script>
 
 </body>
 

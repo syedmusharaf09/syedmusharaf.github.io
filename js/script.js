@@ -33,18 +33,16 @@ window.addEventListener('scroll', () => {
 });
 
 // ========================================
-// STATS COUNTER ANIMATION
+// STATS COUNTER ANIMATION - FIXED
 // ========================================
-const statNumbers = document.querySelectorAll('.stat-number');
+function animateStats() {
+    const statNumbers = document.querySelectorAll('.stat-number');
 
-const animateStats = () => {
     statNumbers.forEach(stat => {
         const target = parseFloat(stat.getAttribute('data-count'));
         const isFloat = target % 1 !== 0;
         let current = 0;
-        const increment = target / 60;
-        const duration = 2000;
-        const stepTime = duration / 60;
+        const increment = target / 80;
 
         const counter = setInterval(() => {
             current += increment;
@@ -52,30 +50,46 @@ const animateStats = () => {
                 current = target;
                 clearInterval(counter);
             }
-            stat.textContent = isFloat ? current.toFixed(1) : Math.floor(current);
-            if (stat.textContent === '100') {
-                stat.textContent = '100%';
+            if (isFloat) {
+                stat.textContent = current.toFixed(1);
+            } else {
+                stat.textContent = Math.floor(current);
             }
-        }, stepTime);
+            // Add % sign for the last stat
+            if (stat.getAttribute('data-count') === '100') {
+                stat.textContent = Math.floor(current) + '%';
+            }
+        }, 25);
     });
-};
+}
 
-// ========================================
-// INTERSECTION OBSERVER FOR STATS
-// ========================================
+// Run animation when page loads
+document.addEventListener('DOMContentLoaded', function () {
+    // Wait a moment then start animation
+    setTimeout(animateStats, 500);
+});
+
+// Also run when the section comes into view (for refresh)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Reset stats to 0 then animate
+            document.querySelectorAll('.stat-number').forEach(stat => {
+                if (stat.getAttribute('data-count') === '100') {
+                    stat.textContent = '0%';
+                } else {
+                    stat.textContent = '0';
+                }
+            });
+            animateStats();
+            observer.disconnect();
+        }
+    });
+}, { threshold: 0.3 });
+
+// Observe the stats section
 const heroStats = document.querySelector('.hero-stats');
-let statsAnimated = false;
-
 if (heroStats) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !statsAnimated) {
-                statsAnimated = true;
-                animateStats();
-            }
-        });
-    }, { threshold: 0.3 });
-
     observer.observe(heroStats);
 }
 
@@ -101,18 +115,14 @@ if (contactForm) {
         const subject = contactForm.querySelectorAll('input[type="text"]')[1];
         const message = contactForm.querySelector('textarea');
 
-        // Simple validation
         if (name.value.trim() && email.value.trim() && subject.value.trim() && message.value.trim()) {
-            // Show success message
             const btn = contactForm.querySelector('.btn');
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
             btn.style.background = '#38a169';
 
-            // Reset form
             contactForm.reset();
 
-            // Reset button after 3 seconds
             setTimeout(() => {
                 btn.innerHTML = originalText;
                 btn.style.background = '';
@@ -124,7 +134,7 @@ if (contactForm) {
 }
 
 // ========================================
-// SMOOTH SCROLL FOR ALL ANCHOR LINKS
+// SMOOTH SCROLL
 // ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

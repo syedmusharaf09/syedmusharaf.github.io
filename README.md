@@ -1,24 +1,20 @@
-# Syed Musharaf A — Portfolio Site (Certificate Template)
+# Syed Musharaf A — Portfolio Site (Top-Nav Template)
 
-A single-file HTML portfolio styled as a formal "Certificate of Professional Record" — a nod to the insurance-policy documents you've worked with. Push to GitHub and host free on GitHub Pages.
+A single-file HTML portfolio in the top-navigation, green/teal-gradient style you shared — built entirely from your resume content. Push to GitHub and host free on GitHub Pages.
+
+## About the photo
+Your photo is already wired in as `profile.jpg`, sitting next to `index.html` in this folder. Keep both files together — if you rename or move the photo, update the `src="profile.jpg"` in `index.html` to match.
 
 ## 1. Push it to GitHub
 
 ```bash
-# from inside this folder
 git init
 git add .
-git commit -m "Add certificate portfolio site"
-
-# create a new repo on github.com first (e.g. "portfolio"), then:
+git commit -m "Add top-nav portfolio site"
 git branch -M main
 git remote add origin https://github.com/<your-username>/portfolio.git
 git push -u origin main
 ```
-
-If you already pushed the first template to a repo, either:
-- put this in a different repo (e.g. `portfolio-v2`), or
-- overwrite `index.html` in the same repo if you want to replace it.
 
 ## 2. Turn on GitHub Pages
 

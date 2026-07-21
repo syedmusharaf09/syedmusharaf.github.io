@@ -67,10 +67,12 @@ if (contactForm) {
         const originalText = btn.innerHTML;
         btn.innerHTML = '✓ Message Sent!';
         btn.style.background = '#4caf50';
+        btn.style.color = '#fff';
         contactForm.reset();
         setTimeout(() => {
             btn.innerHTML = originalText;
             btn.style.background = '';
+            btn.style.color = '';
         }, 3000);
     });
 }

@@ -1,14 +1,14 @@
-# Syed Musharaf A — Portfolio Site
+# Syed Musharaf A — Portfolio Site (Certificate Template)
 
-A single-file HTML portfolio built from your resume, ready to push to GitHub and host for free on GitHub Pages.
+A single-file HTML portfolio styled as a formal "Certificate of Professional Record" — a nod to the insurance-policy documents you've worked with. Push to GitHub and host free on GitHub Pages.
 
 ## 1. Push it to GitHub
 
 ```bash
-# from inside the "portfolio" folder
+# from inside this folder
 git init
 git add .
-git commit -m "Add portfolio site"
+git commit -m "Add certificate portfolio site"
 
 # create a new repo on github.com first (e.g. "portfolio"), then:
 git branch -M main
@@ -16,22 +16,21 @@ git remote add origin https://github.com/<your-username>/portfolio.git
 git push -u origin main
 ```
 
+If you already pushed the first template to a repo, either:
+- put this in a different repo (e.g. `portfolio-v2`), or
+- overwrite `index.html` in the same repo if you want to replace it.
+
 ## 2. Turn on GitHub Pages
 
-1. Go to your repo on GitHub → **Settings** → **Pages**.
-2. Under "Build and deployment", set **Source** to `Deploy from a branch`.
-3. Set **Branch** to `main` and folder to `/ (root)`, then **Save**.
-4. GitHub gives you a live link, usually:
-   `https://<your-username>.github.io/portfolio/`
-
-It can take a minute or two to go live.
+1. Repo on GitHub → **Settings** → **Pages**.
+2. Source: `Deploy from a branch` → Branch: `main`, folder `/ (root)` → **Save**.
+3. Live link: `https://<your-username>.github.io/<repo-name>/`
 
 ## 3. Add it to LinkedIn
 
-- **Featured section**: Profile → "Add profile section" → Featured → add the GitHub Pages link.
-- **Contact info**: Add it as your Website under "Edit contact info".
-- **Headline/About**: Drop the link in your About section too.
+- **Featured section** → add the link.
+- **Contact info** → Website.
 
 ## Editing later
 
-Everything is in `index.html` — one file, no build step. Open it in any text editor, change the text between the tags, save, then `git add . && git commit -m "update" && git push`.
+One file, no build step: open `index.html`, edit the text, save, then `git add . && git commit -m "update" && git push`.

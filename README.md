@@ -1,16 +1,16 @@
-# Syed Musharaf A — Portfolio Site (Top-Nav Template)
+# Syed Musharaf A — Portfolio Site (Sidebar Template)
 
-A single-file HTML portfolio in the top-navigation, green/teal-gradient style you shared — built entirely from your resume content. Push to GitHub and host free on GitHub Pages.
-
-## About the photo
-Your photo is already wired in as `profile.jpg`, sitting next to `index.html` in this folder. Keep both files together — if you rename or move the photo, update the `src="profile.jpg"` in `index.html` to match.
+A single-file HTML portfolio in the dark, sidebar-navigation style you shared — built entirely from your resume content. Push to GitHub and host free on GitHub Pages.
 
 ## 1. Push it to GitHub
 
 ```bash
+# from inside this folder
 git init
 git add .
-git commit -m "Add top-nav portfolio site"
+git commit -m "Add sidebar portfolio site"
+
+# create a new repo on github.com first, then:
 git branch -M main
 git remote add origin https://github.com/<your-username>/portfolio.git
 git push -u origin main
@@ -29,4 +29,4 @@ git push -u origin main
 
 ## Editing later
 
-One file, no build step: open `index.html`, edit the text, save, then `git add . && git commit -m "update" && git push`.
+One file, no build step: open `index.html`, edit the text between the tags, save, then `git add . && git commit -m "update" && git push`.

@@ -2,15 +2,20 @@
 <html lang="en">
 
 <head>
+       
     <meta charset="UTF-8">
+       
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYED MUSHARAF A — HR Operations &amp; Finance Professional</title>
+        <title>SYED MUSHARAF A — HR Operations &amp; Finance Professional</title>
+       
     <link rel="preconnect" href="https://fonts.googleapis.com">
+       
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
+       
+    <link        
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <style>
+                rel="stylesheet">
+        <style>
         :root {
             --bg: #0B0E10;
             --bg-alt: #0F1316;
@@ -73,7 +78,7 @@
             display: block;
         }
 
-        /* ---------- Top nav ---------- */
+        /* ---------- Top Nav ---------- */
         .navbar {
             position: sticky;
             top: 0;
@@ -93,6 +98,7 @@
             font-size: 1.25rem;
             color: var(--green);
             letter-spacing: 0.01em;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -299,23 +305,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .avatar-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
-        }
-        .avatar-initials {
-            font-family: var(--font-display);
-            font-weight: 800;
-            font-size: clamp(3rem, 8vw, 4.2rem);
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            overflow: hidden;
         }
 
         /* ---------- About ---------- */
@@ -414,61 +404,61 @@
             position: relative;
             padding-left: 1.2rem;
             font-size: 0.94rem;
-            color: var(--text-dim);
-        }
 
-        .exp-card li::before {
-            content: "▸";
-            position: absolute;
+            color: var(--text-dim);
+        content: "▸";
+        }
             left: 0;
+        .exp-card li::before {
+
+            position: absolute;
             color: var(--green);
+        #education {
         }
 
         /* ---------- Education ---------- */
-        #education {
+        }        .edu-card {
             border-top: 1px solid var(--line);
-        }
-
-        .edu-card {
-            background: var(--card);
             border: 1px solid var(--line);
-            border-radius: 12px;
+
             padding: 1.4rem 1.7rem;
+            background: var(--card);
+
+            border-radius: 12px;
+        }        .edu-card:last-child {
             margin-bottom: 1.1rem;
-        }
 
-        .edu-card:last-child {
+
             margin-bottom: 0;
+        display: flex;
         }
-
-        .edu-top {
-            display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
+        .edu-top {
+
+            justify-content: space-between;
+        }        .edu-degree {
             gap: 0.3rem 1rem;
-        }
+            font-weight: 600;
 
-        .edu-degree {
+
             font-family: var(--font-display);
-            font-weight: 600;
             font-size: 1rem;
+        color: var(--teal);
         }
-
-        .edu-years {
-            color: var(--teal);
-            font-size: 0.82rem;
             font-weight: 600;
+        .edu-years {
+
+            font-size: 0.82rem;
+        }        .edu-school {
             white-space: nowrap;
-        }
-
-        .edu-school {
-            color: var(--text-dim);
             font-size: 0.9rem;
-            margin-top: 0.2rem;
-        }
 
-        /* ---------- Skills ---------- */
+
+            color: var(--text-dim);
+            margin-top: 0.2rem;
         #skills {
+        }
+        /* ---------- Skills ---------- */
             border-top: 1px solid var(--line);
         }
 
@@ -526,8 +516,10 @@
             font-weight: 700;
         }
 
-        /* ---------- Achievements ---------- */
-        #achievements {
+        /* ---------- Achievements & Cards ---------- */
+        #achievements,
+        #certificates,
+        #projects {
             border-top: 1px solid var(--line);
         }
 
@@ -553,16 +545,6 @@
         .ach-desc {
             color: var(--text-dim);
             font-size: 0.9rem;
-        }
-
-        /* ---------- Certificates ---------- */
-        #certificates {
-            border-top: 1px solid var(--line);
-        }
-
-        /* ---------- Projects ---------- */
-        #projects {
-            border-top: 1px solid var(--line);
         }
 
         /* ---------- Contact ---------- */
@@ -618,319 +600,377 @@
 
 <body>
 
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+        <nav class="navbar">
+                <a href="#home" class="logo">SYED MUSHARAF A</a>
+                <ul class="nav-links">
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#certificates">Certificates</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+            </nav>
 
-    <section id="home">
-        <div class="hero-grid">
-            <div>
-                <h1 class="hero-role">SYED MUSHARAF A</h1>
-                <h3 class="greet">HR &amp; Finance<br>Professional</h3>
-                <p class="hero-desc">Building accurate, compliant HR and financial operations — from employee lifecycle
-                    management to reconciliations and insurance claims.</p>
-                <p class="hero-desc">MBA graduate with 5+ years across HR Operations, Accounting and Insurance
-                    Processing.</p>
-                <div class="hero-badges">
-                    <span>📍 Dubai, UAE</span>
-                    <span>🎓 MBA — HR &amp; Finance</span>
-                    <span>💼 General Accountant</span>
-                </div>
-                <div class="hero-btns">
-                    <a class="btn btn-solid" href="#experience">View Experience</a>
-                    <a class="btn btn-outline" href="#contact">Contact Me</a>
-                </div>
-            </div>
-            <div class="avatar-col">
-                <div class="avatar-ring">
-                    <div class="avatar-inner">
-                        <img src="profile.jpeg" alt="SYED MUSHARAF A">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section id="home">
+                <div class="hero-grid">
+                        <div>
+                                <h1 class="hero-role">SYED MUSHARAF A</h1>
+                                <h3 class="greet">HR Administration &amp; Finance Professional</h3>
+                                <p class="hero-desc">MBA graduate with 5+ years of experience in HR Operations, General
+                    Accounting, and
+                                        Insurance Operations across the UAE and India.</p>
+                                <p class="hero-desc">Proficient in employee lifecycle management, payroll support,
+                    accounts
+                                        payable/receivable, reconciliations, general ledger maintenance, Oracle HCM,
+                    HRIS, Tally ERP, and
+                                        Fresa.</p>
+                                <div class="hero-badges">
+                                        <span>📍 Dubai, UAE</span>
+                                        <span>🎓 MBA — HR &amp; Finance</span>
+                                        <span>💼 General Accountant</span>
+                                        <span>⚡ 95%+ Processing Accuracy</span>
+                                    </div>
+                                <div class="hero-btns">
+                                        <a class="btn btn-solid" href="#experience">View Experience</a>
+                                        <a class="btn btn-outline" href="#contact">Contact Me</a>
+                                    </div>
+                            </div>
+                        <div class="avatar-col">
+                                <div class="avatar-ring">
+                                        <div class="avatar-inner">
+                                                <img src="profile.jpg" alt="SYED MUSHARAF A"                            
+                            style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                                            </div>
+                                    </div>
+                            </div>
+                    </div>
+            </section>
 
-    <section id="about">
-        <div class="section-label">About</div>
-        <h2 class="section-title">About Me</h2>
-        <p class="about-text">
-            MBA graduate specializing in Human Resources and Finance with over 5 years and 9 months of professional
-            experience across HR Operations, Accounting and Insurance Processing. Skilled in managing employee lifecycle
-            processes, payroll support, HR administration, financial record maintenance, reconciliations, insurance
-            claims processing and client support. Proficient in MS Office Suite, Tally ERP, Fresa, Oracle HCM, HRIS and
-            accounting systems, with a proven track record of managing multiple priorities in fast-paced environments.
-        </p>
-        <div class="about-stats">
-            <div class="stat">
-                <div class="num">5.9</div>
-                <div class="lbl">Years Experience</div>
-            </div>
-            <div class="stat">
-                <div class="num">3</div>
-                <div class="lbl">Domains: HR, Accounts, Insurance</div>
-            </div>
-            <div class="stat">
-                <div class="num">5</div>
-                <div class="lbl">Languages </div>
-            </div>
-            <div class="stat">
-                <div class="num">MBA</div>
-                <div class="lbl">HR &amp; Finance</div>
-            </div>
-        </div>
-    </section>
+        <section id="about">
+                <div class="section-label">About</div>
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                        MBA graduate (HR &amp; Finance) with 5+ years of experience in HR Operations, General
+            Accounting, and
+                        Insurance Operations across the UAE and India. Experienced in employee lifecycle management,
+            payroll
+                        support, accounts payable/receivable, reconciliations, maintaining general ledger, and financial
+                        documentation. Proficient in Oracle HCM, HRIS, Tally ERP, Fresa, and Microsoft Office tools.
+            Recognized for
+                        maintaining higher than 90% accuracy, ensuring regulatory compliance, and collaborating
+            effectively with
+                        cross-functional teams to deliver efficient HR, financial, and administrative support in
+            fast-paced
+                        environments.
+                    </p>
+                <div class="about-stats">
+                        <div class="stat">
+                                <div class="num">5+</div>
+                                <div class="lbl">Years Experience</div>
+                            </div>
+                        <div class="stat">
+                                <div class="num">3</div>
+                                <div class="lbl">Domains: HR, Accounting, Insurance</div>
+                            </div>
+                        <div class="stat">
+                                <div class="num">5</div>
+                                <div class="lbl">Languages Spoken</div>
+                            </div>
+                        <div class="stat">
+                                <div class="num">MBA</div>
+                                <div class="lbl">HR &amp; Finance</div>
+                            </div>
+                    </div>
+            </section>
 
-    <section id="experience">
-        <div class="section-label">Career</div>
-        <h2 class="section-title">Experience</h2>
+        <section id="experience">
+                <div class="section-label">Career</div>
+                <h2 class="section-title">Professional Experience</h2>
 
-        <div class="exp-card">
-            <div class="exp-top">
-                <span class="exp-role">General Accountant</span>
-                <span class="exp-period">Feb 2025 — Present</span>
-            </div>
-            <div class="exp-org">Marakish Express Cargo · Dubai, UAE</div>
-            <ul>
-                <li>Streamlined day-to-day accounting operations, managing invoice processing, financial data entry and
-                    timely account reconciliations in compliance with organizational standards.</li>
-                <li>Maintained and systematically updated financial records, general ledger entries and core accounting
-                    documentation for seamless reporting.</li>
-                <li>Managed end-to-end accounts payable and accounts receivable, optimizing transaction processing times
-                    and vendor relations.</li>
-                <li>Facilitated month-end and year-end closing through detailed reconciliations and critical reporting
-                    documentation.</li>
-                <li>Collaborated with senior accounting leadership on strategic administrative and financial workflows.
-                </li>
-            </ul>
-        </div>
+                <div class="exp-card">
+                        <div class="exp-top">
+                                <span class="exp-role">General Accountant</span>
+                                <span class="exp-period">Feb 2025 — Present</span>
+                            </div>
+                        <div class="exp-org">Marakish Express Cargo · Dubai, UAE</div>
+                        <ul>
+                                <li>Process invoices, journal entries, and financial transactions while ensuring
+                    compliance with company
+                                        policies and UAE accounting standards.</li>
+                                <li>Maintain and reconcile the General Ledger (GL), ensuring the accuracy and integrity
+                    of financial
+                                        records and supporting financial reporting.</li>
+                                <li>Manage end-to-end Accounts Payable (AP) and Accounts Receivable (AR), including
+                    invoice
+                                        verification, payment processing, customer collections, and vendor account
+                    reconciliation.</li>
+                                <li>Prepare bank reconciliations and support month-end and year-end closing activities
+                    by maintaining
+                                        accurate financial documentation and reconciliation schedules.</li>
+                                <li>Assist in the preparation of financial reports, keeping records and documentation to
+                    support
+                                        management decision-making.</li>
+                                <li>Collaborate with senior accountants and cross-functional departments to streamline
+                    accounting
+                                        workflows, improve operational efficiency, and ensure timely financial
+                    processing.</li>
+                            </ul>
+                    </div>
 
-        <div class="exp-card">
-            <div class="exp-top">
-                <span class="exp-role">Process Associate — US HR Operations</span>
-                <span class="exp-period">May 2022 — May 2024</span>
-            </div>
-            <div class="exp-org">Eurofins (BPO) India Pvt Ltd · Bengaluru, India</div>
-            <ul>
-                <li>Executed end-to-end employee lifecycle processes for US operations: onboarding, transitions,
-                    offboarding and termination.</li>
-                <li>Maintained and audited employee records, attendance and HRIS databases, ensuring 100% data accuracy
-                    and confidentiality.</li>
-                <li>Served as primary point of contact for US-based employees, resolving HR inquiries and policy
-                    clarifications.</li>
-                <li>Collaborated on payroll administration and benefits management aligned with US labor standards.</li>
-                <li>Authored SOPs to standardize HR workflows and produced data-driven reports for leadership.</li>
-            </ul>
-        </div>
+                <div class="exp-card">
+                        <div class="exp-top">
+                                <span class="exp-role">Process Associate — US HR Operations</span>
+                                <span class="exp-period">May 2022 — May 2024</span>
+                            </div>
+                        <div class="exp-org">Eurofins (BPO) India Pvt Ltd · Bengaluru, India</div>
+                        <ul>
+                                <li>Managed the end-to-end employee lifecycle for US employees, including onboarding,
+                    job transitions,
+                                        offboarding, and termination processing for 100+ employee cases while ensuring
+                    compliance with
+                                        organizational policies.</li>
+                                <li>Maintained, audited, and updated employee records, attendance, and HRIS databases,
+                    achieving 100%
+                                        data accuracy, confidentiality, and compliance.</li>
+                                <li>Served as the primary HR point of contact for US-based employees, resolving
+                    HR-related inquiries,
+                                        policy clarifications, and employee requests while delivering a high level of
+                    customer service.</li>
+                                <li>Supported payroll administration, benefits administration, leave management, and
+                    employee data
+                                        validation in accordance with company policies and US labor requirements.</li>
+                                <li>Developed and maintained Standard Operating Procedures (SOPs), generated HR reports
+                    and dashboards,
+                                        and provided accurate workforce data to support leadership decision-making and
+                    process improvements.
+                                    </li>
+                            </ul>
+                    </div>
 
-        <div class="exp-card">
-            <div class="exp-top">
-                <span class="exp-role">Sr. Transaction Processing Officer</span>
-                <span class="exp-period">Oct 2019 — Jan 2022</span>
-            </div>
-            <div class="exp-org">Mphasis Ltd · Bengaluru, India</div>
-            <ul>
-                <li>Supported UK Motor and UAE Property insurance operations: quotation preparation, renewal management
-                    and mid-term adjustments.</li>
-                <li>Managed confidential policy documents, ensuring data security and regulatory compliance.</li>
-                <li>Acted as key contact for policyholder concerns, delivering solutions and maintaining client
-                    relationships.</li>
-                <li>Processed insurance claims with precision, adhering to established policies and procedures.</li>
-                <li>Performed detailed claims reconciliation to ensure accurate transactions and financial data
-                    integrity.</li>
-            </ul>
-        </div>
-    </section>
+                <div class="exp-card">
+                        <div class="exp-top">
+                                <span class="exp-role">Sr. Transaction Processing Officer</span>
+                                <span class="exp-period">Oct 2019 — Jan 2022</span>
+                            </div>
+                        <div class="exp-org">Mphasis Ltd · Bengaluru, India</div>
+                        <ul>
+                                <li>Supported UK Motor and UAE Property insurance operations by processing policy
+                    quotations, renewals,
+                                        endorsements, and mid-term adjustments while ensuring adherence to client and
+                    regulatory
+                                        requirements.</li>
+                                <li>Managed confidential policy documentation and customer records, maintaining data
+                    accuracy, security,
+                                        and compliance with organizational standards.</li>
+                                <li>Served as the primary point of contact for policyholders, resolving inquiries,
+                    providing
+                                        policy-related support, and delivering high-quality customer service.</li>
+                                <li>Processed insurance claims efficiently and accurately, ensuring timely settlement in
+                    accordance with
+                                        established procedures and service-level agreements (SLAs).</li>
+                                <li>Performed claims reconciliation and policy validation to maintain financial data
+                    integrity,
+                                        achieving and consistently maintaining more than 90% processing accuracy.</li>
+                            </ul>
+                    </div>
+            </section>
 
-    <section id="education">
-        <div class="section-label">Academics</div>
-        <h2 class="section-title">Education</h2>
+        <section id="education">
+                <div class="section-label">Academics</div>
+                <h2 class="section-title">Education</h2>
 
-        <div class="edu-card">
-            <div class="edu-top">
-                <span class="edu-degree">Master of Business Administration (MBA) — HR &amp; Finance</span>
-                <span class="edu-years">2017 — 2019</span>
-            </div>
-            <div class="edu-school">PPG Business School, Coimbatore · Anna University</div>
-        </div>
-        <div class="edu-card">
-            <div class="edu-top">
-                <span class="edu-degree">Bachelor of Commerce (BCom) — Computer Application</span>
-                <span class="edu-years">2014 — 2017</span>
-            </div>
-            <div class="edu-school">Erode Arts and Science College · Bharathiar University</div>
-        </div>
-    </section>
+                <div class="edu-card">
+                        <div class="edu-top">
+                                <span class="edu-degree">Master of Business Administration (MBA) — HR &amp;
+                    Finance</span>
+                                <span class="edu-years">2017 — 2019</span>
+                            </div>
+                        <div class="edu-school">PPG Business School, Coimbatore (Anna University)</div>
+                    </div>
+                <div class="edu-card">
+                        <div class="edu-top">
+                                <span class="edu-degree">Bachelor of Commerce (BCom) — Computer Application</span>
+                                <span class="edu-years">2014 — 2017</span>
+                            </div>
+                        <div class="edu-school">Erode Arts and Science College, Erode (Bharathiar University)</div>
+                    </div>
+            </section>
 
-    <section id="skills">
-        <div class="section-label">Capabilities</div>
-        <h2 class="section-title">Skills</h2>
+        <section id="skills">
+                <div class="section-label">Capabilities</div>
+                <h2 class="section-title">Core Skills</h2>
 
-        <div class="skills-grid">
-            <div class="skill-group">
-                <span class="g-label">HR Systems</span>
-                <div class="chip-row"><span class="chip">Oracle HCM</span><span class="chip">HRIS</span></div>
-            </div>
-            <div class="skill-group">
-                <span class="g-label">Accounting Software</span>
-                <div class="chip-row"><span class="chip">Tally ERP</span><span class="chip">Fresa</span></div>
-            </div>
-            <div class="skill-group">
-                <span class="g-label">MS Office Suite</span>
-                <div class="chip-row"><span class="chip">Excel</span><span class="chip">Word</span><span
-                        class="chip">PowerPoint</span><span class="chip">Outlook</span></div>
-            </div>
-            <div class="skill-group">
-                <span class="g-label">HR Functions</span>
-                <div class="chip-row">
-                    <span class="chip">Employee Data Management</span><span class="chip">Employee Relations</span><span
-                        class="chip">Onboarding &amp; Offboarding</span>
-                    <span class="chip">Attendance Management</span><span class="chip">Payroll Support</span><span
-                        class="chip">Benefits Admin</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <span class="g-label">Accounting Functions</span>
-                <div class="chip-row">
-                    <span class="chip">Accounts Payable</span><span class="chip">Accounts Receivable</span>
-                    <span class="chip">General Ledger</span><span class="chip">Financial Documentation</span><span
-                        class="chip">Reconciliation</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <span class="g-label">Insurance Operations</span>
-                <div class="chip-row"><span class="chip">Claims Processing</span><span class="chip">Renewals
-                        Management</span><span class="chip">Mid-Term Adjustments</span></div>
-            </div>
-            <div class="skill-group">
-                <span class="g-label">Administrative</span>
-                <div class="chip-row">
-                    <span class="chip">Data Entry</span><span class="chip">Documentation Management</span><span
-                        class="chip">Record Keeping</span><span class="chip">Report Preparation</span>
-                </div>
-            </div>
-        </div>
+                <div class="skills-grid">
+                        <div class="skill-group">
+                                <span class="g-label">HR Systems &amp; Functions</span>
+                                <div class="chip-row">
+                                        <span class="chip">Oracle HCM</span>
+                                        <span class="chip">HRIS</span>
+                                        <span class="chip">Employee Lifecycle Management</span>
+                                        <span class="chip">Onboarding &amp; Offboarding</span>
+                                        <span class="chip">Payroll Support</span>
+                                        <span class="chip">Benefits Administration</span>
+                                        <span class="chip">Attendance Management</span>
+                                    </div>
+                            </div>
+                        <div class="skill-group">
+                                <span class="g-label">Accounting Systems &amp; Functions</span>
+                                <div class="chip-row">
+                                        <span class="chip">Tally ERP</span>
+                                        <span class="chip">Fresa</span>
+                                        <span class="chip">Accounts Payable (AP)</span>
+                                        <span class="chip">Accounts Receivable (AR)</span>
+                                        <span class="chip">General Ledger (GL)</span>
+                                        <span class="chip">Bank Reconciliation</span>
+                                        <span class="chip">Financial Reporting</span>
+                                        <span class="chip">VAT Support</span>
+                                    </div>
+                            </div>
+                        <div class="skill-group">
+                                <span class="g-label">Insurance Operations</span>
+                                <div class="chip-row">
+                                        <span class="chip">Claims Processing</span>
+                                        <span class="chip">Policy Administration</span>
+                                        <span class="chip">Renewals Management</span>
+                                        <span class="chip">Mid-Term Adjustments</span>
+                                        <span class="chip">SLAs</span>
+                                    </div>
+                            </div>
+                        <div class="skill-group">
+                                <span class="g-label">Technical Skills</span>
+                                <div class="chip-row">
+                                        <span class="chip">MS Excel (XLOOKUP, VLOOKUP)</span>
+                                        <span class="chip">Pivot Tables</span>
+                                        <span class="chip">Dashboards</span>
+                                        <span class="chip">Microsoft Word</span>
+                                        <span class="chip">PowerPoint</span>
+                                        <span class="chip">Outlook</span>
+                                    </div>
+                            </div>
+                    </div>
 
-        <div class="soft-grid">
-            <div class="soft-item">Leadership &amp; Communication</div>
-            <div class="soft-item">Problem Solving, Critical Thinking &amp; Decision Making</div>
-            <div class="soft-item">Interpersonal Skills &amp; Team Collaboration</div>
-            <div class="soft-item">Analytical Thinking &amp; Conflict Resolution</div>
-            <div class="soft-item">Organizational Skills &amp; Time Management</div>
-            <div class="soft-item">Adaptability, Multitasking &amp; Continuous Learning</div>
-        </div>
-    </section>
+                <div class="soft-grid">
+                        <div class="soft-item">Leadership &amp; Communication</div>
+                        <div class="soft-item">Analytical Thinking &amp; Problem Solving</div>
+                        <div class="soft-item">Attention to Detail &amp; Confidentiality</div>
+                        <div class="soft-item">Time Management &amp; Multitasking</div>
+                        <div class="soft-item">Team Collaboration &amp; Compliance</div>
+                    </div>
+            </section>
 
-    <section id="achievements">
-        <div class="section-label">Recognition</div>
-        <h2 class="section-title">Achievements</h2>
+        <section id="achievements">
+                <div class="section-label">Recognition</div>
+                <h2 class="section-title">Key Achievements</h2>
 
-        <div class="ach-card">
-            <div class="ach-title">Technical Training & Knowledge Sharing</div>
-            <div class="ach-desc">Conducted technical training sessions for junior team members, accelerating
-                onboarding, improving process understanding and promoting knowledge sharing across the team.</div>
-        </div>
-        <div class="ach-card">
-            <div class="ach-title">Process Improvement & Operational Excellence</div>
-            <div class="ach-desc">Identified opportunities to streamline HR, accounting and insurance workflows,
-                improving operational efficiency while maintaining accuracy and compliance.</div>
-        </div>
-        <div class="ach-card">
-            <div class="ach-title">High Accuracy & Quality Performance</div>
-            <div class="ach-desc">Consistently maintained a high level of accuracy above 90% in employee records,
+                <div class="ach-card">
+                        <div class="ach-title">High Accuracy &amp; Quality Excellence</div>
+                        <div class="ach-desc">Maintained more than 90% processing accuracy across HR operations,
                 financial
-                transactions, reconciliations and insurance processing while meeting organizational quality standards.
-            </div>
-        </div>
-        <div class="ach-card">
-            <div class="ach-title">Cross-Functional Collaboration</div>
-            <div class="ach-desc">Worked closely with HR, Finance, Operations and business stakeholders to resolve
-                complex issues, improve service delivery and ensure seamless business operations.</div>
-        </div>
-        <div class="ach-card">
-            <div class="ach-title">Customer & Employee Support Excellence</div>
-            <div class="ach-desc">Successfully resolved employee, client and stakeholder queries by delivering timely,
-                professional and customer-focused solutions while maintaining confidentiality and service quality.</div>
-        </div>
-        <div class="ach-card">
-            <div class="ach-title">Compliance & Data Integrity</div>
-            <div class="ach-desc">Ensured strict compliance with organizational policies by maintaining accurate HR
-                records, financial documentation and confidential business information with exceptional attention to
-                detail.</div>
-        </div>
-    </section>
+                                transactions, reconciliations, and insurance processing while ensuring compliance with
+                organizational
+                                standards.</div>
+                    </div>
+                <div class="ach-card">
+                        <div class="ach-title">Technical Training &amp; Knowledge Transfer</div>
+                        <div class="ach-desc">Delivered technical training and knowledge transfer sessions for new team
+                members,
+                                reducing onboarding time and improving process understanding and productivity.</div>
+                    </div>
+                <div class="ach-card">
+                        <div class="ach-title">Process Improvement &amp; Operational Efficiency</div>
+                        <div class="ach-desc">Identified and implemented process improvements across HR, accounting, and
+                insurance
+                                operations, enhancing workflow efficiency while maintaining data accuracy and regulatory
+                compliance.
+                            </div>
+                    </div>
+                <div class="ach-card">
+                        <div class="ach-title">Cross-Functional Collaboration</div>
+                        <div class="ach-desc">Collaborated effectively with HR, Finance, and Operations teams to resolve
+                complex
+                                operational issues, streamline processes, and improve service delivery.</div>
+                    </div>
+                <div class="ach-card">
+                        <div class="ach-title">Data Integrity &amp; Confidentiality</div>
+                        <div class="ach-desc">Consistently maintained high standards of confidentiality, data integrity,
+                and
+                                documentation accuracy when handling employee, financial, and insurance records.</div>
+                    </div>
+            </section>
 
-    <section id="certificates">
-        <div class="section-label">Professional Credentials</div>
-        <h2 class="section-title">Certificates</h2>
-        <div class="ach-card">
-            <div class="ach-title">Tally ERP 9 — Technical Certification</div>
-            <div class="ach-desc">Earned a professional certification validating specialized competence in digital
-                financial accounting, ledger maintenance and corporate financial reporting.</div>
-        </div>
-    </section>
+        <section id="certificates">
+                <div class="section-label">Professional Credentials</div>
+                <h2 class="section-title">Certifications</h2>
+                <div class="ach-card">
+                        <div class="ach-title">Tally ERP 9 — Professional Certification</div>
+                        <div class="ach-desc">Earned a professional certification validating specialized competence in
+                digital
+                                financial accounting, ledger maintenance, and corporate financial reporting.</div>
+                    </div>
+            </section>
 
-    <section id="projects">
-        <div class="section-label">Academic Work</div>
-        <h2 class="section-title">Projects</h2>
-        <div class="ach-card">
-            <div class="ach-title">HR Research Project — Employee Safety &amp; Welfare</div>
-            <div class="ach-desc">In-depth MBA study on Employee Safety and Welfare at Penta Auto Equipments Pvt Ltd;
-                designed employee surveys and conducted stakeholder interviews to identify workplace hazards, using
-                statistical analysis to deliver actionable insights.</div>
-        </div>
-        <div class="ach-card">
-            <div class="ach-title">MBA Summer Internship — Malabar Cements Ltd</div>
-            <div class="ach-desc">Comprehensive operational internship analyzing core corporate functions; designed
-                targeted questionnaires and performed cross-departmental workplace observations spanning Finance,
-                Marketing, Production, Procurement and Logistics.</div>
-        </div>
-    </section>
+        <section id="projects">
+                <div class="section-label">Academic Work</div>
+                <h2 class="section-title">Projects &amp; Internships</h2>
+                <div class="ach-card">
+                        <div class="ach-title">MBA Research Project: Employee Safety &amp; Welfare</div>
+                        <div class="ach-desc">In-depth study conducted at Penta Auto Equipments Pvt Ltd; designed
+                employee surveys
+                                and conducted stakeholder interviews to analyze workplace safety parameters using
+                statistical analysis.
+                            </div>
+                    </div>
+                <div class="ach-card">
+                        <div class="ach-title">MBA Summer Internship: Malabar Cements Ltd</div>
+                        <div class="ach-desc">Comprehensive cross-departmental operational analysis spanning core
+                business units
+                                including Finance, Marketing, Production, Procurement, and Logistics.</div>
+                    </div>
+            </section>
 
-    <section id="contact">
-        <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-card">
-            <div class="contact-item">
-                <div class="label">Email</div>
-                <div class="value"><a href="mailto:syedmusharaf936@gmail.com">syedmusharaf936@gmail.com</a></div>
-            </div>
-            <div class="contact-item">
-                <div class="label">Phone</div>
-                <div class="value">+971 564268547</div>
-            </div>
-            <div class="contact-item">
-                <div class="label">LinkedIn</div>
-                <div class="value">
-                    <a href="https://www.linkedin.com/in/syed-musharaf-a-56475a208/" target="_blank"
-                        rel="noopener noreferrer">
-                        linkedin.com/in/syed-musharaf-a-56475a208
-                    </a>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="label">Location</div>
-                <div class="value">Hor Al Anz, Dubai, UAE</div>
-            </div>
-        </div>
-        <div class="lang-row">
-            <span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Tamil</span><span
-                class="chip">Malayalam</span><span class="chip">Urdu</span>
-        </div>
-    </section>
+        <section id="contact">
+                <div class="section-label">Get In Touch</div>
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-card">
+                        <div class="contact-item">
+                                <div class="label">Email</div>
+                                <div class="value"><a
+                        href="mailto:syedmusharaf936@gmail.com">syedmusharaf936@gmail.com</a></div>
+                            </div>
+                        <div class="contact-item">
+                                <div class="label">Phone</div>
+                                <div class="value"><a href="tel:+971564268547">+971 564268547</a></div>
+                            </div>
+                        <div class="contact-item">
+                                <div class="label">LinkedIn</div>
+                                <div class="value">
+                                        <a href="https://linkedin.com/in/syed-musharaf-a-56475a208" target="_blank"    
+                                            rel="noopener noreferrer">
+                                                linkedin.com/in/syed-musharaf-a-56475a208
+                                            </a>
+                                    </div>
+                            </div>
+                        <div class="contact-item">
+                                <div class="label">Location</div>
+                                <div class="value">Dubai, UAE</div>
+                            </div>
+                    </div>
+                <div class="lang-row">
+                        <span class="chip">English</span>
+                        <span class="chip">Hindi</span>
+                        <span class="chip">Tamil</span>
+                        <span class="chip">Malayalam</span>
+                        <span class="chip">Urdu</span>
+                    </div>
+            </section>
 
-    <footer>© SYED MUSHARAF A · Built 2026</footer>
+        <footer>© SYED MUSHARAF A</footer>
 
+       
     <script>
         const sections = document.querySelectorAll('section[id]');
         const links = document.querySelectorAll('.nav-links a');

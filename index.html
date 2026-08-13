@@ -12,14 +12,17 @@
     rel="stylesheet" />
   <style>
     :root {
-      --bg: #0b0e10;
-      --bg-alt: #0f1316;
-      --card: #141a1d;
-      --line: #232b2f;
-      --text: #f1f3f4;
-      --text-dim: #a9b2b6;
+      /* Premium Dark Theme Palette */
+      --bg: #090e11;
+      --bg-alt: #12181d;
+      --card: #12181d;
+      --line: #222b33;
+      --text: #f0f4f8;
+      --text-dim: #9aa5b1;
       --green: #00d26a;
+      /* Vibrant Mint */
       --teal: #00c3ff;
+      /* Vibrant Cyan */
       --gradient: linear-gradient(90deg, var(--green), var(--teal));
       --font-display: "Poppins", sans-serif;
       --font-body: "Inter", sans-serif;
@@ -80,13 +83,19 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11, 14, 16, 0.95);
+      background: rgba(9, 14, 17, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1.5rem;
       padding: 1.1rem clamp(1.2rem, 4vw, 3rem);
+    }
+
+    .nav-header {
+      display: flex;
+      align-items: center;
     }
 
     .logo {
@@ -105,6 +114,7 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       align-items: center;
+      flex: 1;
     }
 
     .nav-links a {
@@ -128,10 +138,10 @@
     }
 
     /* Navbar Resume Button - Beautifully Styled */
-    .nav-links a.nav-resume-btn {
+    .nav-resume-btn {
       border: 1.5px solid var(--teal);
       color: var(--teal);
-      background: transparent;
+      background: rgba(39, 183, 196, 0.05);
       padding: 0.35rem 0.85rem;
       border-radius: 6px;
       font-weight: 600;
@@ -140,15 +150,20 @@
       align-items: center;
       gap: 0.4rem;
       transition: all 0.3s ease;
-      border-bottom: 1.5px solid var(--teal);
+      border-bottom: 1.5px solid var(--teal) !important;
+      white-space: nowrap;
     }
 
-    .nav-links a.nav-resume-btn:hover,
-    .nav-links a.nav-resume-btn:focus-visible {
+    .nav-resume-btn:hover,
+    .nav-resume-btn:focus-visible {
       background: var(--teal);
-      color: var(--bg);
+      color: var(--bg) !important;
       box-shadow: 0 0 15px rgba(0, 195, 255, 0.3);
       transform: translateY(-2px);
+    }
+
+    .mobile-only-btn {
+      display: none;
     }
 
     /* ---------- Sections Base ---------- */
@@ -203,7 +218,8 @@
     .hero-role {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: clamp(1.5rem, 6.5vw, 3.1rem);
+      /* Dynamic scaling to ensure name fits perfectly */
+      font-size: clamp(1.3rem, 7vw, 3.1rem);
       line-height: 1.15;
       color: var(--green);
       background: var(--gradient);
@@ -211,6 +227,8 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1.3rem;
+      white-space: nowrap;
+      /* Forces name to stay on one line! */
     }
 
     .hero-desc {
@@ -284,7 +302,7 @@
     .btn-teal-outline {
       border: 1.5px solid var(--teal);
       color: var(--teal);
-      background: transparent;
+      background: rgba(39, 183, 196, 0.05);
     }
 
     .btn-teal-outline:hover {
@@ -597,8 +615,6 @@
     }
 
     @media (max-width: 880px) {
-
-      /* Mobile Nav Fix: Clean Flex Layout */
       .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -606,25 +622,30 @@
         padding: 1.2rem 1.5rem;
       }
 
-      /* Horizontal Scroll for Navigation Links on Mobile */
-      .nav-links {
+      .nav-header {
         width: 100%;
-        justify-content: flex-start;
-        gap: 1.2rem;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-        -webkit-overflow-scrolling: touch;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        /* Stacks button under logo exactly like Image 1 */
+        align-items: flex-start;
+        gap: 1rem;
       }
 
-      .nav-links::-webkit-scrollbar {
+      .desktop-only-btn {
         display: none;
       }
 
+      .mobile-only-btn {
+        display: inline-flex;
+      }
+
+      /* Clean wrap for nav links without horizontal scrolling */
       .nav-links {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0.8rem 1.2rem;
+        flex-wrap: wrap;
+        /* WRAPS NEATLY, NO SCROLLING */
       }
     }
 
@@ -684,13 +705,21 @@
 </head>
 
 <body>
+  <!-- FIXED RESPONSIVE NAVIGATION BAR -->
   <nav class="navbar">
-    <a href="#home" class="logo">SYED MUSHARAF A</a>
+    <div class="nav-header">
+      <a href="#home" class="logo">SYED MUSHARAF A</a>
+      <!-- This button only shows on Mobile exactly under the logo like Image 1 -->
+      <a href="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" download="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" target="_blank"
+        class="nav-resume-btn mobile-only-btn">
+        📄 Download Resume
+      </a>
+    </div>
 
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
-      <!-- Perfectly Aligned Nav Resume Button -->
-      <li>
+      <!-- This button only shows on Desktop exactly next to "Home" -->
+      <li class="desktop-only-btn">
         <a href="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" download="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" target="_blank"
           class="nav-resume-btn">
           📄 Download Resume

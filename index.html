@@ -731,11 +731,11 @@
       }
 
       .hero-role:last-child {
-        font-size: clamp(1rem, 4vw, 1.5rem);
+        font-size: clamp(0.9rem, 3.2vw, 1.35rem);
         margin-bottom: 0.4rem;
-        white-space: normal;
-        word-break: break-word;
-        overflow-wrap: anywhere;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         line-height: 1.2;
       }
 
@@ -1129,6 +1129,8 @@
         }
       });
     };
+
+    setActive("home");
 
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(

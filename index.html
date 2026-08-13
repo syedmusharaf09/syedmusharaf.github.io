@@ -36,6 +36,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -661,6 +662,10 @@
     }
 
     @media (max-width: 768px) {
+      html {
+        scroll-padding-top: 130px;
+      }
+
       .hero-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -680,14 +685,16 @@
 
       .hero-role {
         display: block;
+        width: 100%;
         max-width: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         margin-top: 0.2rem;
         margin-bottom: 1rem;
-        font-size: clamp(1.15rem, 5vw, 1.8rem);
+        font-size: clamp(0.95rem, 4vw, 1.6rem);
         line-height: 1.2;
+        letter-spacing: -0.02em;
       }
 
       .hero-desc {

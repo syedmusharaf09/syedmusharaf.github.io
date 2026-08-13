@@ -19,8 +19,8 @@
       --line: #222b33;
       --text: #f0f4f8;
       --text-dim: #9aa5b1;
-      --green: #00d26a;
-      /* Vibrant Mint */
+      --green: #67f4ae;
+      /* Brighter mint for stronger contrast on dark backgrounds */
       --teal: #00c3ff;
       /* Vibrant Cyan */
       --gradient: linear-gradient(90deg, var(--green), var(--teal));
@@ -234,33 +234,34 @@
       margin-bottom: 1.2rem;
     }
 
-    .hero-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(1.7rem, 2.4vw, 2.3rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-      color: var(--text);
-      margin: 0;
-    }
-
     .hero-role {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: clamp(1.7rem, 2.4vw, 2.3rem);
       line-height: 1.12;
       letter-spacing: -0.03em;
-      color: var(--green);
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
       margin: 0;
       max-width: 100%;
       display: inline-block;
       white-space: nowrap;
       overflow: visible;
       text-overflow: clip;
+    }
+
+    .hero-role:first-child {
+      font-size: clamp(3.2rem, 4.3vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      color: #7ef5bd;
+      line-height: 0.95;
+    }
+
+    .hero-role:last-child {
+      font-size: clamp(1.7rem, 2.4vw, 2.3rem);
+      color: var(--green);
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-desc {
@@ -790,7 +791,7 @@
     <div class="hero-grid">
       <div>
         <div class="hero-intro">
-          <a href="#home" class="logo">SYED MUSHARAF A</a>
+          <h3 class="hero-role">SYED MUSHARAF A</h3>
           <h3 class="hero-role">HR Administration &amp; Finance Professional</h3>
         </div>
         <p class="hero-desc">

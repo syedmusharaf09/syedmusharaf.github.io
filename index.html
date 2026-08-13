@@ -782,15 +782,23 @@
 
       .lang-row {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 0.45rem;
         width: 100%;
         max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .lang-row::-webkit-scrollbar {
+        display: none;
       }
 
       .chip {
-        font-size: 0.7rem;
-        padding: 0.34rem 0.7rem;
+        font-size: 0.68rem;
+        padding: 0.32rem 0.7rem;
         white-space: nowrap;
         flex-shrink: 0;
       }

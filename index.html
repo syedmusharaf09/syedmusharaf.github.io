@@ -18,9 +18,9 @@
       --line: #232b2f;
       --text: #f1f3f4;
       --text-dim: #a9b2b6;
-      --green: #2ecc71;
-      --teal: #e5f0f1;
-      --gradient: linear-gradient(90deg, var(--green), var(--white));
+      --green: #00d26a;
+      --teal: #00c3ff;
+      --gradient: linear-gradient(90deg, var(--green), var(--teal));
       --font-display: "Poppins", sans-serif;
       --font-body: "Inter", sans-serif;
     }
@@ -62,7 +62,7 @@
 
     ::selection {
       background: var(--green);
-      color: #08110d;
+      color: var(--bg);
     }
 
     :focus-visible {
@@ -81,7 +81,7 @@
       top: 0;
       z-index: 100;
       background: rgba(11, 14, 16, 0.95);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
       display: flex;
       align-items: center;
@@ -131,9 +131,8 @@
     .nav-links a.nav-resume-btn {
       border: 1.5px solid var(--teal);
       color: var(--teal);
-      background: rgba(39, 183, 196, 0.05);
-      /* Slight teal tint */
-      padding: 0.4rem 0.9rem;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
       border-radius: 6px;
       font-weight: 600;
       font-size: 0.9rem;
@@ -142,16 +141,13 @@
       gap: 0.4rem;
       transition: all 0.3s ease;
       border-bottom: 1.5px solid var(--teal);
-      /* Override the transparent bottom border */
     }
 
     .nav-links a.nav-resume-btn:hover,
     .nav-links a.nav-resume-btn:focus-visible {
       background: var(--teal);
       color: var(--bg);
-      /* Dark text for contrast */
-      box-shadow: 0 0 12px rgba(39, 183, 196, 0.3);
-      /* Premium glow effect */
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.3);
       transform: translateY(-2px);
     }
 
@@ -209,10 +205,11 @@
       font-weight: 800;
       font-size: clamp(1.5rem, 6.5vw, 3.1rem);
       line-height: 1.15;
+      color: var(--green);
       background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
-      color: transparent;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 1.3rem;
     }
 
@@ -267,11 +264,11 @@
 
     .btn-solid {
       background: var(--green);
-      color: #08110d;
+      color: var(--bg);
     }
 
     .btn-solid:hover {
-      box-shadow: 0 0 12px rgba(46, 204, 113, 0.3);
+      box-shadow: 0 0 15px rgba(0, 210, 106, 0.3);
     }
 
     .btn-outline {
@@ -281,20 +278,19 @@
     }
 
     .btn-outline:hover {
-      background: rgba(46, 204, 113, 0.1);
+      background: rgba(0, 210, 106, 0.1);
     }
 
-    /* Special Teal Style for the Download Resume Button */
     .btn-teal-outline {
       border: 1.5px solid var(--teal);
       color: var(--teal);
-      background: rgba(39, 183, 196, 0.05);
+      background: transparent;
     }
 
     .btn-teal-outline:hover {
       background: var(--teal);
       color: var(--bg);
-      box-shadow: 0 0 12px rgba(39, 183, 196, 0.3);
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.3);
     }
 
     .avatar-col {
@@ -308,7 +304,7 @@
       border-radius: 50%;
       padding: 6px;
       background: conic-gradient(from 180deg, var(--green), var(--teal), var(--green));
-      box-shadow: 0 0 46px rgba(46, 204, 113, 0.28);
+      box-shadow: 0 0 46px rgba(0, 210, 106, 0.2);
     }
 
     .avatar-inner {
@@ -354,10 +350,13 @@
       font-family: var(--font-display);
       font-weight: 800;
       font-size: 1.6rem;
+      line-height: 1.2;
+      display: block;
+      color: var(--green);
       background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
-      color: transparent;
+      -webkit-text-fill-color: transparent;
     }
 
     .stat .lbl {
@@ -598,6 +597,8 @@
     }
 
     @media (max-width: 880px) {
+
+      /* Mobile Nav Fix: Clean Flex Layout */
       .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -605,6 +606,7 @@
         padding: 1.2rem 1.5rem;
       }
 
+      /* Horizontal Scroll for Navigation Links on Mobile */
       .nav-links {
         width: 100%;
         justify-content: flex-start;
@@ -613,6 +615,7 @@
         overflow-x: auto;
         padding-bottom: 0.5rem;
         -webkit-overflow-scrolling: touch;
+        align-items: center;
       }
 
       .nav-links::-webkit-scrollbar {
@@ -686,6 +689,7 @@
 
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
+      <!-- Perfectly Aligned Nav Resume Button -->
       <li>
         <a href="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" download="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" target="_blank"
           class="nav-resume-btn">
@@ -723,7 +727,6 @@
           <span>⚡ 95%+ Processing Accuracy</span>
         </div>
 
-        <!-- Repaired and Restored Hero Buttons -->
         <div class="hero-btns">
           <a class="btn btn-solid" href="#experience">View Experience</a>
           <a class="btn btn-outline" href="#contact">Contact Me</a>

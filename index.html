@@ -97,6 +97,7 @@
     .nav-header {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .logo {
@@ -117,6 +118,7 @@
       align-items: center;
       flex: 1;
       min-width: 0;
+      margin-left: auto;
     }
 
     .nav-links li {
@@ -225,8 +227,23 @@
       margin-bottom: 0.8rem;
     }
 
-    /* Now the main hero heading is the ROLE TITLE, not the name (the name
-       already lives in the sticky nav logo above, so we don't repeat it). */
+    .hero-intro {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.7rem, 2.4vw, 2.3rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin: 0;
+    }
+
     .hero-role {
       font-family: var(--font-display);
       font-weight: 700;
@@ -238,7 +255,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1.3rem;
+      margin: 0;
       max-width: 100%;
       display: inline-block;
       white-space: nowrap;
@@ -744,8 +761,6 @@
   <!-- FIXED RESPONSIVE NAVIGATION BAR -->
   <nav class="navbar">
     <div class="nav-header">
-      <a href="#home" class="logo">SYED MUSHARAF A</a>
-      <!-- This button only shows on Mobile exactly under the logo like Image 1 -->
       <a href="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" download="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" target="_blank"
         class="nav-resume-btn mobile-only-btn">
         📄 Download Resume
@@ -774,7 +789,10 @@
   <section id="home">
     <div class="hero-grid">
       <div>
-        <h3 class="hero-role">HR Administration &amp; Finance Professional</h3>
+        <div class="hero-intro">
+          <a href="#home" class="logo">SYED MUSHARAF A</a>
+          <h3 class="hero-role">HR Administration &amp; Finance Professional</h3>
+        </div>
         <p class="hero-desc">
           MBA graduate with 5+ years of experience in HR Operations, General
           Accounting, and Insurance Operations across the UAE and India.

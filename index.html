@@ -19,8 +19,8 @@
       --text: #f1f3f4;
       --text-dim: #a9b2b6;
       --green: #2ecc71;
-      --teal: #27b7c4;
-      --gradient: linear-gradient(90deg, var(--green), var(--teal));
+      --teal: #e5f0f1;
+      --gradient: linear-gradient(90deg, var(--green), var(--white));
       --font-display: "Poppins", sans-serif;
       --font-body: "Inter", sans-serif;
     }
@@ -89,39 +89,13 @@
       padding: 1.1rem clamp(1.2rem, 4vw, 3rem);
     }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-shrink: 0;
-    }
-
     .logo {
       font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.05rem, 2.5vw, 1.25rem);
       color: var(--green);
       letter-spacing: 0.01em;
-    }
-
-    /* Navbar Resume Button */
-    .nav-resume-btn {
-      border: 1.5px solid var(--green);
-      color: var(--green);
-      padding: 0.35rem 0.85rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s ease;
-    }
-
-    .nav-resume-btn:hover,
-    .nav-resume-btn:focus-visible {
-      background: var(--green);
-      color: #08110d;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -140,6 +114,7 @@
       padding-bottom: 0.3rem;
       border-bottom: 2px solid transparent;
       transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
     }
 
     .nav-links a:hover,
@@ -150,6 +125,34 @@
     .nav-links a.active {
       color: var(--green);
       border-color: var(--green);
+    }
+
+    /* Navbar Resume Button - Beautifully Styled */
+    .nav-links a.nav-resume-btn {
+      border: 1.5px solid var(--teal);
+      color: var(--teal);
+      background: rgba(39, 183, 196, 0.05);
+      /* Slight teal tint */
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.3s ease;
+      border-bottom: 1.5px solid var(--teal);
+      /* Override the transparent bottom border */
+    }
+
+    .nav-links a.nav-resume-btn:hover,
+    .nav-links a.nav-resume-btn:focus-visible {
+      background: var(--teal);
+      color: var(--bg);
+      /* Dark text for contrast */
+      box-shadow: 0 0 12px rgba(39, 183, 196, 0.3);
+      /* Premium glow effect */
+      transform: translateY(-2px);
     }
 
     /* ---------- Sections Base ---------- */
@@ -204,7 +207,7 @@
     .hero-role {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: clamp(2.2rem, 5vw, 3.1rem);
+      font-size: clamp(1.5rem, 6.5vw, 3.1rem);
       line-height: 1.15;
       background: var(--gradient);
       -webkit-background-clip: text;
@@ -255,7 +258,7 @@
       gap: 0.5rem;
       text-align: center;
       white-space: nowrap;
-      transition: transform 0.15s ease, background 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
@@ -267,10 +270,31 @@
       color: #08110d;
     }
 
+    .btn-solid:hover {
+      box-shadow: 0 0 12px rgba(46, 204, 113, 0.3);
+    }
+
     .btn-outline {
       border: 1.5px solid var(--green);
       color: var(--green);
       background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(46, 204, 113, 0.1);
+    }
+
+    /* Special Teal Style for the Download Resume Button */
+    .btn-teal-outline {
+      border: 1.5px solid var(--teal);
+      color: var(--teal);
+      background: rgba(39, 183, 196, 0.05);
+    }
+
+    .btn-teal-outline:hover {
+      background: var(--teal);
+      color: var(--bg);
+      box-shadow: 0 0 12px rgba(39, 183, 196, 0.3);
     }
 
     .avatar-col {
@@ -581,17 +605,23 @@
         padding: 1.2rem 1.5rem;
       }
 
-      .nav-left {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
       .nav-links {
         width: 100%;
         justify-content: flex-start;
-        gap: 0.8rem 1.2rem;
+        gap: 1.2rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
     }
 
@@ -626,11 +656,6 @@
         padding: 3rem 1.2rem;
       }
 
-      .nav-left {
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
       .exp-card,
       .edu-card,
       .ach-card,
@@ -651,25 +676,22 @@
       .btn {
         width: 100%;
       }
-
-      .hero-role {
-        font-size: 2.2rem;
-      }
     }
   </style>
 </head>
 
 <body>
   <nav class="navbar">
-    <div class="nav-left">
-      <a href="#home" class="logo">SYED MUSHARAF A</a>
-      <a href="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" download="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" target="_blank"
-        class="nav-resume-btn">
-        📄 Download Resume
-      </a>
-    </div>
+    <a href="#home" class="logo">SYED MUSHARAF A</a>
+
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
+      <li>
+        <a href="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" download="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" target="_blank"
+          class="nav-resume-btn">
+          📄 Download Resume
+        </a>
+      </li>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
@@ -700,12 +722,13 @@
           <span>💼 General Accountant</span>
           <span>⚡ 95%+ Processing Accuracy</span>
         </div>
+
+        <!-- Repaired and Restored Hero Buttons -->
         <div class="hero-btns">
           <a class="btn btn-solid" href="#experience">View Experience</a>
           <a class="btn btn-outline" href="#contact">Contact Me</a>
-          <!-- <a class="btn btn-outline" href="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf"
-            download="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" target="_blank">📄 Download Resume</a> -->
         </div>
+
       </div>
       <div class="avatar-col">
         <div class="avatar-ring">
@@ -1001,7 +1024,7 @@
 
   <script>
     const sections = document.querySelectorAll("section[id]");
-    const links = document.querySelectorAll(".nav-links a");
+    const links = document.querySelectorAll(".nav-links a:not(.nav-resume-btn)");
 
     const setActive = (id) => {
       links.forEach((link) => {

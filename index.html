@@ -770,33 +770,27 @@
       }
 
       .contact-item .value a {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: block;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        display: inline;
         max-width: 100%;
-        width: 100%;
+        width: auto;
+        word-break: break-word;
+        overflow-wrap: anywhere;
       }
 
       .lang-row {
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
+        flex-wrap: wrap;
         gap: 0.45rem;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
         width: 100%;
         max-width: 100%;
       }
 
-      .lang-row::-webkit-scrollbar {
-        display: none;
-      }
-
       .chip {
-        font-size: 0.72rem;
-        padding: 0.38rem 0.7rem;
+        font-size: 0.7rem;
+        padding: 0.34rem 0.7rem;
         white-space: nowrap;
         flex-shrink: 0;
       }

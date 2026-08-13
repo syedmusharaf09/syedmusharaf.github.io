@@ -210,25 +210,32 @@
     .greet {
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 1.2rem;
-      color: var(--green);
-      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.8rem;
     }
 
+    /* Now the main hero heading is the ROLE TITLE, not the name (the name
+       already lives in the sticky nav logo above, so we don't repeat it). */
     .hero-role {
       font-family: var(--font-display);
-      font-weight: 800;
-      /* Dynamic scaling to ensure name fits perfectly */
-      font-size: clamp(1.3rem, 7vw, 3.1rem);
-      line-height: 1.15;
+      font-weight: 700;
+      font-size: clamp(2rem, 3vw, 2.9rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
       color: var(--green);
       background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1.3rem;
+      max-width: 100%;
+      display: inline-block;
       white-space: nowrap;
-      /* Forces name to stay on one line! */
+      overflow: visible;
+      text-overflow: clip;
     }
 
     .hero-desc {
@@ -652,7 +659,7 @@
     @media (max-width: 768px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
       }
 
       .avatar-col {
@@ -664,20 +671,14 @@
         width: min(220px, 50vw);
       }
 
-      .hero-badges {
-        justify-content: flex-start;
-      }
-
-      .exp-top,
-      .edu-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 520px) {
-      section {
-        padding: 3rem 1.2rem;
+      .hero-role {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+        margin-top: 0.4rem;
+        margin-bottom: 1rem;
+        font-size: clamp(1.35rem, 4vw, 2.3rem);
       }
 
       .exp-card,
@@ -738,8 +739,7 @@
   <section id="home">
     <div class="hero-grid">
       <div>
-        <h3 class="greet">HR Administration &amp; Finance Professional</h3>
-        <h1 class="hero-role">SYED MUSHARAF A</h1>
+        <h3 class="hero-role">HR Administration &amp; Finance Professional</h3>
         <p class="hero-desc">
           MBA graduate with 5+ years of experience in HR Operations, General
           Accounting, and Insurance Operations across the UAE and India.

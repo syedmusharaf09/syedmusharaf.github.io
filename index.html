@@ -751,15 +751,45 @@
         font-size: 0.74rem;
       }
 
+      .contact-card {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .contact-item .value a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        max-width: 100%;
+      }
+
+      .lang-row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 0.45rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .lang-row::-webkit-scrollbar {
+        display: none;
+      }
+
+      .chip {
+        font-size: 0.72rem;
+        padding: 0.38rem 0.7rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
       .exp-card,
       .edu-card,
       .ach-card,
       .contact-card {
         padding: 1.4rem;
-      }
-
-      .contact-card {
-        grid-template-columns: 1fr;
       }
 
       .hero-btns {

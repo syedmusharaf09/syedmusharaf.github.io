@@ -754,6 +754,19 @@
       .contact-card {
         display: grid;
         grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      .contact-item {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .contact-item .value {
+        width: 100%;
+        min-width: 0;
       }
 
       .contact-item .value a {
@@ -762,6 +775,7 @@
         text-overflow: ellipsis;
         display: block;
         max-width: 100%;
+        width: 100%;
       }
 
       .lang-row {
@@ -772,6 +786,8 @@
         gap: 0.45rem;
         -ms-overflow-style: none;
         scrollbar-width: none;
+        width: 100%;
+        max-width: 100%;
       }
 
       .lang-row::-webkit-scrollbar {

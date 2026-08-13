@@ -321,6 +321,8 @@
     .avatar-col {
       display: flex;
       justify-content: center;
+      align-items: center;
+      width: 100%;
     }
 
     .avatar-ring {
@@ -330,6 +332,8 @@
       padding: 6px;
       background: conic-gradient(from 180deg, var(--green), var(--teal), var(--green));
       box-shadow: 0 0 46px rgba(0, 210, 106, 0.2);
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .avatar-inner {
@@ -664,11 +668,13 @@
 
       .avatar-col {
         order: -1;
-        justify-content: flex-start;
+        justify-content: center;
+        align-items: center;
       }
 
       .avatar-ring {
-        width: min(220px, 50vw);
+        width: min(220px, 55vw);
+        margin: 0 auto;
       }
 
       .hero-role {

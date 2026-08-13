@@ -696,6 +696,11 @@
         gap: 1.5rem;
       }
 
+      .hero-intro {
+        gap: 0.2rem;
+        margin-bottom: 1rem;
+      }
+
       .avatar-col {
         order: -1;
         justify-content: center;
@@ -712,14 +717,22 @@
         display: block;
         width: 100%;
         max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin-top: 0.2rem;
-        margin-bottom: 1rem;
-        font-size: clamp(0.95rem, 4vw, 1.6rem);
-        line-height: 1.2;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        margin: 0;
+        line-height: 1.15;
         letter-spacing: -0.02em;
+      }
+
+      .hero-role:first-child {
+        font-size: clamp(2.2rem, 8vw, 3rem);
+        margin-bottom: 0.2rem;
+      }
+
+      .hero-role:last-child {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        margin-bottom: 0.4rem;
       }
 
       .hero-desc {
@@ -769,14 +782,14 @@
     </div>
 
     <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
       <!-- This button only shows on Desktop exactly next to "Home" -->
       <li class="desktop-only-btn">
         <a href="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" download="SyedMusharafA_Resume_5+yrs_HR-Fin.pdf" target="_blank"
-          class="nav-resume-btn">
-          📄 Download Resume
-        </a>
-      </li>
+        class="nav-resume-btn">
+        📄 Download Resume
+      </a>
+    </li>
+    <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>

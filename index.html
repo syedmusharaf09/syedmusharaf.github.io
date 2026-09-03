@@ -255,13 +255,16 @@
       line-height: 0.95;
     }
 
+    /* UPDATED: Subtitle is now smaller, uses the secondary font (Inter), and a solid vibrant cyan color */
     .hero-role:last-child {
-      font-size: clamp(1.7rem, 2.4vw, 2.3rem);
-      color: var(--green);
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-family: var(--font-body);
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+      font-weight: 500;
+      color: var(--teal);
+      letter-spacing: 0.02em;
+      margin-top: 0.4rem;
+      background: none;
+      -webkit-text-fill-color: currentColor;
     }
 
     .hero-desc {
@@ -727,13 +730,14 @@
         margin-bottom: 0.2rem;
       }
 
+      /* UPDATED MOBILE: Adjusted wrapping and size for the new subtitle */
       .hero-role:last-child {
-        font-size: clamp(0.9rem, 3.2vw, 1.35rem);
-        margin-bottom: 0.4rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1.2;
+        font-size: clamp(1rem, 3.5vw, 1.15rem);
+        margin-bottom: 0.6rem;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        line-height: 1.4;
       }
 
       .hero-desc {
@@ -882,7 +886,8 @@
     <div class="section-label">About</div>
     <h2 class="section-title">About Me</h2>
     <p class="about-text">
-      MBA graduate in Finance HR with 5+ years of experience in General Accounting and Financial Operations across the
+      MBA graduate in Finance and HR with 5+ years of experience in General Accounting and Financial Operations across
+      the
       UAE and India, including prior exposure to Insurance and HR Operations. Experienced in Accounts Payable (AP),
       Accounts Receivable (AR), bank reconciliations, vendor reconciliations, General Ledger maintenance, invoice
       processing, and financial documentation. Proficient in Tally ERP, Fresa, MS Office Suite, and Oracle HCM.
@@ -890,22 +895,22 @@
       with cross-functional teams to deliver efficient financial and administrative support.
     </p>
     <div class="about-stats">
-      <div class="stat">
+      <a class="stat" href="#experience">
         <div class="num">5+</div>
         <div class="lbl">Years Experience</div>
-      </div>
-      <div class="stat">
+      </a>
+      <a class="stat" href="#experience">
         <div class="num">3</div>
         <div class="lbl">Domains: Accounting, Insurance, HR</div>
-      </div>
-      <div class="stat">
+      </a>
+      <a class="stat" href="#languages">
         <div class="num">5</div>
         <div class="lbl">Languages Spoken</div>
-      </div>
-      <div class="stat">
+      </a>
+      <a class="stat" href="#education">
         <div class="num">MBA</div>
         <div class="lbl">Finance &amp; HR</div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -982,7 +987,7 @@
 
     <div class="edu-card">
       <div class="edu-top">
-        <span class="edu-degree">Master of Business Administration (MBA) — HR &amp; Finance</span>
+        <span class="edu-degree">Master of Business Administration (MBA) — Finance &amp; HR </span>
         <span class="edu-years">2017 — 2019</span>
       </div>
       <div class="edu-school">PPG Business School, Coimbatore (Anna University)</div>
@@ -1155,7 +1160,7 @@
         <div class="value">Dubai, UAE</div>
       </div>
     </div>
-    <div class="lang-row">
+    <div class="lang-row" id="languages">
       <span class="chip">English</span>
       <span class="chip">Hindi</span>
       <span class="chip">Tamil</span>

@@ -4,28 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SYED MUSHARAF A — General Accountant | Finance Professional</title>
+  <title>Syed Musharaf A — General Accountant | Finance Professional</title>
+  <meta name="description"
+    content="General Accountant and MBA (Finance & HR) with 6+ years of professional experience, including 2 years of UAE accounting experience. Based in Dubai." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:wght@500;600;700&display=swap"
     rel="stylesheet" />
   <style>
     :root {
-      /* Premium Dark Theme Palette */
-      --bg: #090e11;
-      --bg-alt: #12181d;
-      --card: #12181d;
-      --line: #222b33;
-      --text: #f0f4f8;
-      --text-dim: #9aa5b1;
-      --green: #67f4ae;
-      /* Brighter mint for stronger contrast on dark backgrounds */
-      --teal: #00c3ff;
-      /* Vibrant Cyan */
-      --gradient: linear-gradient(90deg, var(--green), var(--teal));
-      --font-display: "Poppins", sans-serif;
-      --font-body: "Inter", sans-serif;
+      --paper: #ffffff;
+      --wash: #f5f7f9;
+      --ink: #14213d;
+      --muted: #4b586c;
+      --rule: #dde2e9;
+      --accent: #0b5d4b;
+      --accent-tint: #e8f1ee;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+      --sidebar: 300px;
     }
 
     * {
@@ -36,7 +34,6 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -45,33 +42,32 @@
       }
 
       * {
-        animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
 
     a {
       color: inherit;
-      text-decoration: none;
     }
 
     ::selection {
-      background: var(--green);
-      color: var(--bg);
+      background: var(--accent);
+      color: #fff;
     }
 
     :focus-visible {
-      outline: 2px solid var(--teal);
+      outline: 2px solid var(--accent);
       outline-offset: 3px;
+      border-radius: 2px;
     }
 
     img {
@@ -79,1110 +75,958 @@
       display: block;
     }
 
-    /* ---------- Top Nav ---------- */
-    .navbar {
+    /* ---------- Page frame ---------- */
+    .page {
+      display: grid;
+      grid-template-columns: var(--sidebar) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .sidebar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(9, 14, 17, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      padding: 1.1rem clamp(1.2rem, 4vw, 3rem);
-    }
-
-    .nav-header {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-      color: var(--green);
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      flex-wrap: nowrap;
-      justify-content: flex-end;
-      align-items: center;
-      flex: 1;
-      min-width: 0;
-      margin-left: auto;
-    }
-
-    .nav-links li {
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-    }
-
-    .nav-links a {
-      color: var(--text-dim);
-      font-weight: 500;
-      font-size: 0.95rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s ease, border-color 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
-    }
-
-    .nav-links a.active {
-      color: var(--green);
-      border-color: var(--green);
-    }
-
-    /* Navbar Resume Button - Beautifully Styled */
-    .nav-resume-btn {
-      border: 1.5px solid var(--teal);
-      color: var(--teal);
-      background: rgba(39, 183, 196, 0.05);
-      padding: 0.35rem 0.85rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.3s ease;
-      border-bottom: 1.5px solid var(--teal) !important;
-      white-space: nowrap;
-    }
-
-    .nav-resume-btn:hover,
-    .nav-resume-btn:focus-visible {
-      background: var(--teal);
-      color: var(--bg) !important;
-      box-shadow: 0 0 15px rgba(0, 195, 255, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .mobile-only-btn {
-      display: none;
-    }
-
-    /* ---------- Sections Base ---------- */
-    section {
-      padding: clamp(3rem, 8vw, 5.5rem) clamp(1.2rem, 6vw, 4rem);
-      max-width: 1180px;
-      margin: 0 auto;
-      border-top: 1px solid transparent;
-    }
-
-    section:not(#home) {
-      border-top: 1px solid var(--line);
-    }
-
-    .section-label {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 0.6rem;
-    }
-
-    h2.section-title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
-      margin-bottom: 2.2rem;
-    }
-
-    /* ---------- Hero ---------- */
-    #home {
-      padding-top: clamp(3rem, 9vw, 5rem);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .greet {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-intro {
+      height: 100vh;
+      overflow-y: auto;
+      background: var(--wash);
+      border-right: 1px solid var(--rule);
+      padding: 2.5rem 2rem 2rem;
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
-      margin-bottom: 1.2rem;
+      gap: 1.75rem;
     }
 
-    .hero-role {
-      margin: 0;
-      max-width: 100%;
-      display: inline-block;
-      white-space: nowrap;
-      overflow: visible;
-      text-overflow: clip;
-    }
-
-    .hero-role:first-child {
-      font-family: var(--font-display);
-      font-size: clamp(3.2rem, 4.3vw, 4.5rem);
-      font-weight: 800;
-      letter-spacing: -0.06em;
-      color: #7ef5bd;
-      line-height: 0.95;
-    }
-
-    /* UPDATED: Subtitle is now smaller, lighter, uppercase, and uses a soft muted blue-grey matching color */
-    .hero-role:last-child {
-      font-family: var(--font-body);
-      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-      font-weight: 400;
-      color: var(--teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 0.6rem;
-      background: none;
-      -webkit-text-fill-color: currentColor;
-    }
-
-    .hero-desc {
-      color: var(--text-dim);
-      font-size: 1.02rem;
-      max-width: 55ch;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-badges {
+    .sidebar-top {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 1.4rem 0 2rem;
+      flex-direction: column;
+      gap: 1.25rem;
     }
 
-    .hero-badges span {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      border: 1px solid var(--line);
-      background: var(--card);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .btn {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.85rem 1.7rem;
-      border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      text-align: center;
-      white-space: nowrap;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-solid {
-      background: var(--green);
-      color: var(--bg);
-    }
-
-    .btn-solid:hover {
-      box-shadow: 0 0 15px rgba(0, 210, 106, 0.3);
-    }
-
-    .btn-outline {
-      border: 1.5px solid var(--green);
-      color: var(--green);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: rgba(0, 210, 106, 0.1);
-    }
-
-    .btn-teal-outline {
-      border: 1.5px solid var(--teal);
-      color: var(--teal);
-      background: rgba(39, 183, 196, 0.05);
-    }
-
-    .btn-teal-outline:hover {
-      background: var(--teal);
-      color: var(--bg);
-      box-shadow: 0 0 15px rgba(0, 195, 255, 0.3);
-    }
-
-    .avatar-col {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .avatar-ring {
-      width: min(320px, 70vw);
-      aspect-ratio: 1/1;
+    .portrait {
+      width: 112px;
+      height: 112px;
       border-radius: 50%;
-      padding: 6px;
-      background: conic-gradient(from 180deg, var(--green), var(--teal), var(--green));
-      box-shadow: 0 0 46px rgba(0, 210, 106, 0.2);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .avatar-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: var(--card);
-      border: 4px solid var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--paper);
     }
 
-    .avatar-inner img {
+    .portrait img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    /* ---------- About ---------- */
-    .about-text {
-      color: var(--text-dim);
-      font-size: 1.02rem;
-      max-width: 75ch;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      margin-top: 2.2rem;
-    }
-
-    .stat {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 1.4rem;
-    }
-
-    .stat .num {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.6rem;
-      line-height: 1.2;
-      display: block;
-      color: var(--green);
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .stat .lbl {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      margin-top: 0.4rem;
-    }
-
-    /* ---------- Experience & Education Cards ---------- */
-    .exp-card,
-    .edu-card,
-    .ach-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 1.8rem;
-      margin-bottom: 1.4rem;
-      transition: border-color 0.2s ease;
-    }
-
-    .exp-card:hover,
-    .edu-card:hover,
-    .ach-card:hover {
-      border-color: #3b484f;
-    }
-
-    .exp-card:last-child,
-    .edu-card:last-child,
-    .ach-card:last-child {
-      margin-bottom: 0;
-    }
-
-    .exp-top,
-    .edu-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem 1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .exp-role,
-    .edu-degree {
-      font-family: var(--font-display);
+    .identity h1 {
+      font-family: var(--serif);
+      font-size: 1.65rem;
       font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
     }
 
-    .exp-period,
-    .edu-years {
-      font-size: 0.85rem;
-      color: var(--teal);
+    .identity .role {
+      color: var(--accent);
       font-weight: 600;
-      white-space: nowrap;
+      font-size: 1rem;
+      line-height: 1.4;
     }
 
-    .exp-org,
-    .edu-school {
-      color: var(--text-dim);
+    .identity .place {
+      color: var(--muted);
       font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-      font-weight: 500;
+      margin-top: 0.35rem;
     }
 
-    .edu-school {
-      margin-bottom: 0;
-    }
-
-    .exp-card ul {
+    .side-nav ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
     }
 
-    .exp-card li {
-      position: relative;
-      padding-left: 1.4rem;
-      font-size: 0.95rem;
-      color: var(--text-dim);
-    }
-
-    .exp-card li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: var(--green);
-    }
-
-    /* ---------- Skills ---------- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .skill-group .g-label {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--teal);
+    .side-nav a {
       display: block;
-      margin-bottom: 1rem;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .chip {
-      font-size: 0.85rem;
-      color: var(--text);
-      background: var(--card);
-      border: 1px solid var(--line);
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-    }
-
-    .soft-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      padding-top: 2rem;
-      border-top: 1px dashed var(--line);
-    }
-
-    .soft-item {
-      font-size: 0.95rem;
-      color: var(--text-dim);
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-    }
-
-    .soft-item::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 700;
-    }
-
-    /* ---------- Achievements & Projects ---------- */
-    .ach-title {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1.05rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .ach-desc {
-      color: var(--text-dim);
-      font-size: 0.95rem;
-    }
-
-    /* ---------- Contact ---------- */
-    .contact-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: clamp(1.8rem, 4vw, 2.5rem);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1.5rem;
-      align-items: start;
-    }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      flex: 0 0 auto;
-    }
-
-    .contact-item .label {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--teal);
-      font-weight: 600;
-    }
-
-    .contact-item .value {
-      font-size: 1rem;
-      color: var(--text);
-    }
-
-    .contact-item .value a {
-      display: inline-block;
+      padding: 0.4rem 0 0.4rem 0.9rem;
+      border-left: 2px solid transparent;
+      color: var(--muted);
       text-decoration: none;
-      border-bottom: 1px solid var(--line);
-      color: inherit;
-      white-space: nowrap;
+      font-size: 0.97rem;
+      font-weight: 500;
       transition: color 0.2s ease, border-color 0.2s ease;
-      padding-bottom: 0.1rem;
     }
 
-    .contact-item .value a:hover,
-    .contact-item .value a:focus-visible {
-      color: var(--green);
-      border-color: var(--green);
+    .side-nav a:hover {
+      color: var(--ink);
     }
 
-    .lang-row {
+    .side-nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.97rem;
+      padding: 0.7rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1.5px solid var(--accent);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-solid {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-solid:hover {
+      background: #084a3c;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-tint);
+    }
+
+    .side-actions {
+      margin-top: auto;
+    }
+
+    .side-actions .btn {
+      width: 100%;
+    }
+
+    /* ---------- Main column ---------- */
+    main {
+      padding: 0 clamp(1.5rem, 6vw, 5rem);
+    }
+
+    .content {
+      max-width: 780px;
+    }
+
+    section {
+      padding: clamp(3rem, 7vw, 4.5rem) 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    section:first-child {
+      border-top: none;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 3vw, 1.95rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1.75rem;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      color: var(--ink);
+      max-width: 62ch;
+    }
+
+    p+p {
+      margin-top: 1rem;
+    }
+
+    .body-text {
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
+    /* ---------- Hero ---------- */
+    #home {
+      padding-top: clamp(3rem, 8vw, 5.5rem);
+    }
+
+    #home h2 {
+      font-size: clamp(2rem, 4.2vw, 2.9rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      max-width: 20ch;
+    }
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.75rem;
       margin-top: 2rem;
     }
 
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem 2rem;
+      margin-top: 2.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--rule);
+      list-style: none;
+    }
+
+    .facts li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .facts strong {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .facts span {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ---------- Experience (a true timeline) ---------- */
+    .timeline {
+      list-style: none;
+      border-left: 2px solid var(--rule);
+      margin-left: 0.4rem;
+    }
+
+    .job {
+      position: relative;
+      padding: 0 0 2.5rem 1.75rem;
+    }
+
+    .job:last-child {
+      padding-bottom: 0;
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 0.55rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 2px solid var(--accent);
+    }
+
+    .job.current::before {
+      background: var(--accent);
+    }
+
+    .job-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.25rem 1.5rem;
+    }
+
+    .job h3,
+    .edu h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .period {
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .org {
+      color: var(--muted);
+      font-weight: 500;
+      margin: 0.15rem 0 0.9rem;
+    }
+
+    .bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 1.2rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ---------- Education ---------- */
+    .edu+.edu {
+      margin-top: 1.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .edu .org {
+      margin-bottom: 0;
+    }
+
+    /* ---------- Skills (definition rows) ---------- */
+    .skill-rows {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 0.5rem 2rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .skill-row:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .skill-row dt {
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.5rem;
+      list-style: none;
+    }
+
+    .tags li {
+      background: var(--wash);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.93rem;
+      color: var(--ink);
+    }
+
+    /* ---------- Achievements ---------- */
+    .achievements {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .achievements li {
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .achievements li:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .achievements h3,
+    .entry h3,
+    .languages h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .achievements p,
+    .entry p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 68ch;
+    }
+
+    /* ---------- Certifications & Projects ---------- */
+    .entry+.entry {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-list {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 0.9rem 1.5rem;
+      align-items: baseline;
+    }
+
+    .contact-list dt {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .contact-list dd a {
+      color: var(--ink);
+      text-decoration-color: var(--rule);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      overflow-wrap: anywhere;
+      transition: text-decoration-color 0.2s ease, color 0.2s ease;
+    }
+
+    .contact-list dd a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    .languages {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .languages h3 {
+      margin-bottom: 0.8rem;
+    }
+
     footer {
-      text-align: center;
-      padding: 2rem 1rem 3rem;
-      color: var(--text-dim);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    /* =========================================
-       RESPONSIVE DESIGN (Tablets & Mobile)
-       ========================================= */
-    @media (max-width: 980px) {
-      .contact-card {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-item .value a {
-        white-space: normal;
-        word-break: break-all;
-      }
-    }
-
-    @media (max-width: 880px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1.2rem 1.5rem;
-      }
-
-      .nav-header {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-
-      .desktop-only-btn {
-        display: none;
-      }
-
-      .mobile-only-btn {
-        display: inline-flex;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 0.8rem 1.2rem;
-        flex-wrap: wrap;
-      }
-    }
-
-    @media (max-width: 768px) {
-      html {
-        scroll-padding-top: 130px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .hero-intro {
-        gap: 0.2rem;
-        margin-bottom: 1rem;
-      }
-
-      .avatar-col {
-        order: -1;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-      }
-
-      .avatar-ring {
-        width: min(210px, 60vw);
-        margin: 0 auto;
-      }
-
-      .hero-role {
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .page {
         display: block;
-        width: 100%;
-        max-width: 100%;
-        white-space: normal;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
         overflow: visible;
-        text-overflow: unset;
-        margin: 0;
-        line-height: 1.15;
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding: 1.5rem 1.5rem 0;
+        gap: 1.25rem;
       }
 
-      .hero-role:first-child {
-        font-size: clamp(2.2rem, 8vw, 3rem);
-        margin-bottom: 0.2rem;
-        letter-spacing: -0.02em;
+      .sidebar-top {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.1rem;
       }
 
-      /* UPDATED MOBILE: Adjusted for the new subtitle style */
-      .hero-role:last-child {
-        font-size: clamp(0.75rem, 3.5vw, 0.95rem);
-        margin-bottom: 0.6rem;
-        white-space: normal;
-        overflow: visible;
-        text-overflow: unset;
-        line-height: 1.4;
-        margin-top: 0.2rem;
-      }
-
-      .hero-desc {
-        font-size: 0.96rem;
-      }
-
-      .hero-badges {
-        gap: 0.45rem;
-      }
-
-      .hero-badges span {
-        font-size: 0.74rem;
-      }
-
-      .contact-card {
-        display: grid;
-        grid-template-columns: 1fr;
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-      }
-
-      .contact-item {
-        min-width: 0;
-        width: 100%;
-      }
-
-      .contact-item .value {
-        width: 100%;
-        min-width: 0;
-      }
-
-      .contact-item .value a {
-        white-space: normal;
-        overflow: visible;
-        text-overflow: unset;
-        display: inline;
-        max-width: 100%;
-        width: auto;
-        word-break: break-word;
-        overflow-wrap: anywhere;
-      }
-
-      .lang-row {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 0.45rem;
-        width: 100%;
-        max-width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-
-      .lang-row::-webkit-scrollbar {
-        display: none;
-      }
-
-      .chip {
-        font-size: 0.68rem;
-        padding: 0.32rem 0.7rem;
-        white-space: nowrap;
+      .portrait {
+        width: 84px;
+        height: 84px;
         flex-shrink: 0;
       }
 
-      .exp-card,
-      .edu-card,
-      .ach-card,
-      .contact-card {
-        padding: 1.4rem;
+      .identity h1 {
+        font-size: 1.4rem;
       }
 
-      .hero-btns {
-        flex-direction: column;
-        width: 100%;
-        align-items: stretch;
+      .side-actions {
+        margin-top: 0;
       }
 
-      .btn {
+      .side-actions .btn {
+        width: auto;
+      }
+
+      .side-nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--wash);
+        margin: 0 -1.5rem;
+        padding: 0 1.5rem;
+        border-top: 1px solid var(--rule);
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .side-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .side-nav ul {
+        flex-direction: row;
+        gap: 1.25rem;
+        white-space: nowrap;
+      }
+
+      .side-nav a {
+        padding: 0.8rem 0;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+      }
+
+      .side-nav a.active {
+        border-bottom-color: var(--accent);
+      }
+
+      section {
+        scroll-margin-top: 3.2rem;
+      }
+
+      .sidebar {
+        padding-bottom: 1.25rem;
+      }
+
+      /* keeps the button above the sticky nav bar order: top, button, nav */
+      .side-actions {
+        order: 2;
+      }
+
+      .side-nav {
+        order: 3;
+        margin-bottom: -1.25rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 1rem;
+      }
+
+      .skill-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .contact-list {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+      }
+
+      .contact-list dd {
+        margin-bottom: 0.8rem;
+      }
+
+      .period {
+        white-space: normal;
+      }
+
+      .hero-actions .btn {
         width: 100%;
+      }
+
+      .side-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media print {
+
+      .sidebar,
+      .hero-actions {
+        display: none;
+      }
+
+      .page {
+        display: block;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- FIXED RESPONSIVE NAVIGATION BAR -->
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li class="desktop-only-btn">
-        <a href="SyedMusharafAnverjan_Accountant_Resume.pdf" download="SyedMusharafAnverjan_Accountant_Resume.pdf"
-          target="_blank" class="nav-resume-btn">
-          📄 Download Resume
-        </a>
-      </li>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-    </ul>
-  </nav>
+  <div class="page">
 
-  <section id="home">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-intro">
-          <h3 class="hero-role">SYED MUSHARAF A</h3>
-          <h3 class="hero-role">General Accountant | Finance Professional</h3>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="portrait">
+          <img src="profile.jpg" alt="Syed Musharaf A" />
         </div>
-        <p class="hero-desc">
-          MBA graduate in Finance & HR with 6+ years of experience in General Accounting and Financial Operations across
-          the UAE and India, including prior exposure to Insurance and HR Operations.
-        </p>
-        <p class="hero-desc">
-          Proficient in employee lifecycle management, payroll support, accounts payable/receivable, reconciliations,
-          general ledger maintenance, Oracle HCM, HRIS, Tally ERP, Fresa and MS Office Tools.
-        </p>
-        <div class="hero-badges">
-          <span>📍 Dubai, UAE</span>
-          <span>🎓 MBA — Finance &amp; HR</span>
-          <span>💼 General Accountant</span>
-          <span>⚡ 98%+ Processing Accuracy</span>
+        <div class="identity">
+          <h1>Syed Musharaf A</h1>
+          <p class="role">General Accountant | Finance Professional</p>
+          <p class="place">Dubai, UAE</p>
         </div>
-
-        <div class="hero-btns">
-          <a class="btn btn-solid" href="#experience">View Experience</a>
-          <a class="btn btn-outline" href="#contact">Contact Me</a>
-        </div>
-
       </div>
-      <div class="avatar-col">
-        <div class="avatar-ring">
-          <div class="avatar-inner">
-            <img src="profile.jpg" alt="SYED MUSHARAF A" />
+
+      <nav class="side-nav" aria-label="Page sections">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#certificates">Certifications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="side-actions">
+        <a class="btn btn-solid" href="SyedMusharafAnverjan_Accountant_Resume.pdf"
+          download="SyedMusharafAnverjan_Accountant_Resume.pdf">Download resume</a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+      <div class="content">
+
+        <!-- HOME -->
+        <section id="home">
+          <h2>Finance and accounting professional based in Dubai</h2>
+          <p class="lead">
+            MBA graduate in Finance &amp; HR with 6+ years of professional experience, including 2 years of UAE
+            experience in Accounting, along with HR Operations and Insurance Process experience in India.
+          </p>
+          <p class="body-text">
+            Proficient in employee lifecycle management, payroll support, accounts payable/receivable,
+            reconciliations, general ledger maintenance, Oracle HCM, HRIS, Tally ERP, Fresa and MS Office Tools.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#experience">View experience</a>
+            <a class="btn btn-outline" href="#contact">Contact me</a>
           </div>
-        </div>
+          <ul class="facts">
+            <li><strong>6+ years</strong><span>Professional experience</span></li>
+            <li><strong>98%+</strong><span>Processing accuracy</span></li>
+            <li><strong>MBA</strong><span>Finance &amp; HR</span></li>
+            <li><strong>Dubai, UAE</strong><span>Current location</span></li>
+          </ul>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+          <h2>About me</h2>
+          <p class="body-text">
+            MBA graduate in Finance &amp; HR with 6+ years of professional experience, including 2 years of UAE
+            experience in Accounting, along with HR Operations and Insurance Process experience in India. Experienced
+            in Accounts Payable (AP), Accounts Receivable (AR), bank reconciliations, vendor reconciliations, General
+            Ledger maintenance, invoice processing, and financial documentation. Proficient in Tally ERP, Fresa, MS
+            Office Tools, and Oracle HCM. Recognized for maintaining over 98% processing accuracy, ensuring compliance
+            and data integrity, and collaborating with cross-functional teams to deliver efficient financial and
+            administrative support.
+          </p>
+          <ul class="facts">
+            <li><strong>6+</strong><span>Years of experience</span></li>
+            <li><strong>3</strong><span>Domains: Accounting, Insurance, HR</span></li>
+            <li><strong>5</strong><span>Languages spoken</span></li>
+            <li><strong>MBA</strong><span>Finance &amp; HR</span></li>
+          </ul>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+          <h2>Professional experience</h2>
+          <ol class="timeline">
+
+            <li class="job current">
+              <div class="job-head">
+                <h3>General Accountant</h3>
+                <span class="period">Feb 2025 – Present</span>
+              </div>
+              <p class="org">Marakish Express Cargo, Dubai, UAE</p>
+              <ul class="bullets">
+                <li>Process invoices, Voucher entries, and core financial transactions while ensuring accuracy and
+                  compliance with UAE accounting requirements.</li>
+                <li>Maintain and reconcile the General Ledger (GL), ensuring accuracy and integrity of financial
+                  records and supporting financial reporting.</li>
+                <li>Manage Accounts Payable (AP) and Accounts Receivable (AR), including invoice verification, payment
+                  processing, customer collections, and vendor account reconciliation.</li>
+                <li>Prepare bank reconciliations and support month-end and year-end closing activities by maintaining
+                  accurate financial documentation and reconciliation schedules.</li>
+                <li>Assist in preparing financial reports, submission of UAE VAT and Corporate Tax returns.</li>
+                <li>Collaborate with senior accountants and cross-functional departments to improve accounting
+                  workflows and ensure timely financial processing.</li>
+              </ul>
+            </li>
+
+            <li class="job">
+              <div class="job-head">
+                <h3>Process Associate – US HR Operations</h3>
+                <span class="period">May 2022 – May 2024</span>
+              </div>
+              <p class="org">Eurofins (BPO) India Pvt Ltd, Bengaluru, India</p>
+              <ul class="bullets">
+                <li>Managed the employee lifecycle for US employees, including onboarding, job transitions,
+                  offboarding, and termination processing for 100+ employee cases while ensuring compliance with
+                  organizational policies.</li>
+                <li>Maintained, audited, and updated employee records, attendance, and HRIS databases, ensuring data
+                  accuracy, confidentiality, and compliance.</li>
+                <li>Served as a primary HR point of contact for US-based employees, resolving HR inquiries, policy
+                  clarifications, and employee requests while delivering high-quality customer service.</li>
+                <li>Supported payroll administration, benefits administration, leave management, and employee data
+                  validation in accordance with company policies and US labor requirements.</li>
+                <li>Developed and maintained Standard Operating Procedures (SOPs), generated HR reports and
+                  dashboards, and provided accurate workforce data to support leadership decision-making and process
+                  improvements.</li>
+              </ul>
+            </li>
+
+            <li class="job">
+              <div class="job-head">
+                <h3>Sr. Transaction Processing Officer</h3>
+                <span class="period">Oct 2019 – Jan 2022</span>
+              </div>
+              <p class="org">Mphasis Ltd, Bengaluru, India</p>
+              <ul class="bullets">
+                <li>Supported UK Motor and UAE Property insurance operations by processing policy quotations,
+                  renewals, endorsements, and mid-term adjustments while ensuring adherence to client and regulatory
+                  requirements.</li>
+                <li>Managed confidential policy documentation and customer records, maintaining data accuracy,
+                  security, and compliance with organizational standards.</li>
+                <li>Served as a primary point of contact for policyholders, resolving inquiries, providing
+                  policy-related support, and delivering high-quality customer service.</li>
+                <li>Processed insurance claims efficiently and accurately, ensuring timely settlement in accordance
+                  with established procedures and service-level agreements (SLAs).</li>
+                <li>Performed claims reconciliation and policy validation to maintain financial data integrity,
+                  achieving and consistently maintaining more than 98% processing accuracy.</li>
+              </ul>
+            </li>
+
+          </ol>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+          <h2>Education</h2>
+
+          <div class="edu">
+            <div class="job-head">
+              <h3>Master of Business Administration (MBA), Finance &amp; HR</h3>
+              <span class="period">2017 – 2019</span>
+            </div>
+            <p class="org">PPG Business School, Coimbatore (Anna University), Tamil Nadu, India</p>
+          </div>
+
+          <div class="edu">
+            <div class="job-head">
+              <h3>Bachelor of Commerce (BCom), Computer Application</h3>
+              <span class="period">2014 – 2017</span>
+            </div>
+            <p class="org">Erode Arts and Science College, Erode (Bharathiar University), Tamil Nadu, India</p>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+          <h2>Core skills</h2>
+          <dl class="skill-rows">
+
+            <div class="skill-row">
+              <dt>Accounting systems and functions</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Tally ERP</li>
+                  <li>Fresa</li>
+                  <li>Accounts Payable (AP)</li>
+                  <li>Accounts Receivable (AR)</li>
+                  <li>General Ledger (GL) Maintenance</li>
+                  <li>Invoice Processing</li>
+                  <li>Journal Entries</li>
+                  <li>Bank Reconciliation</li>
+                  <li>Vendor Reconciliation</li>
+                  <li>Financial Reporting</li>
+                  <li>Month-End &amp; Year-End Closing</li>
+                  <li>Financial Documentation</li>
+                  <li>UAE VAT Support &amp; Compliance</li>
+                </ul>
+              </dd>
+            </div>
+
+            <div class="skill-row">
+              <dt>Insurance operations</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Claims Processing</li>
+                  <li>Policy Administration</li>
+                  <li>Renewals Management</li>
+                  <li>Policy Quotations</li>
+                  <li>Endorsements</li>
+                  <li>Mid-Term Adjustments</li>
+                  <li>SLAs</li>
+                </ul>
+              </dd>
+            </div>
+
+            <div class="skill-row">
+              <dt>HR systems and functions</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Oracle HCM</li>
+                  <li>HRIS</li>
+                  <li>Employee Lifecycle Management</li>
+                  <li>Onboarding &amp; Offboarding</li>
+                  <li>Payroll Support</li>
+                  <li>Benefits Administration</li>
+                  <li>Attendance Management</li>
+                  <li>Employee Data Management</li>
+                </ul>
+              </dd>
+            </div>
+
+            <div class="skill-row">
+              <dt>Technical skills</dt>
+              <dd>
+                <ul class="tags">
+                  <li>MS Excel (XLOOKUP, VLOOKUP)</li>
+                  <li>Pivot Tables</li>
+                  <li>Dashboards</li>
+                  <li>Microsoft Word</li>
+                  <li>PowerPoint</li>
+                  <li>Outlook</li>
+                </ul>
+              </dd>
+            </div>
+
+            <div class="skill-row">
+              <dt>Professional skills</dt>
+              <dd>
+                <ul class="tags">
+                  <li>Leadership &amp; Communication</li>
+                  <li>Analytical Thinking &amp; Problem Solving</li>
+                  <li>Attention to Detail &amp; Confidentiality</li>
+                  <li>Time Management &amp; Multitasking</li>
+                  <li>Team Collaboration &amp; Compliance</li>
+                </ul>
+              </dd>
+            </div>
+
+          </dl>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements">
+          <h2>Key achievements</h2>
+          <ul class="achievements">
+            <li>
+              <h3>High accuracy and quality excellence</h3>
+              <p>Maintained over 98% processing accuracy across financial transactions, AP/AR reconciliations, and
+                general accounting activities while ensuring compliance with organizational standards.</p>
+            </li>
+            <li>
+              <h3>Process improvement and operational efficiency</h3>
+              <p>Identified and implemented process improvements across accounting and financial operations, enhancing
+                workflow efficiency, data accuracy, and timely completion of activities.</p>
+            </li>
+            <li>
+              <h3>Data integrity and confidentiality</h3>
+              <p>Maintained high standards of financial documentation, data integrity, and confidentiality while
+                handling accounting records, reconciliations, invoices, and financial transactions.</p>
+            </li>
+            <li>
+              <h3>Cross-functional collaboration</h3>
+              <p>Applied analytical and problem-solving skills to resolve accounting and operational issues while
+                collaborating with Finance and Operations teams to improve service delivery.</p>
+            </li>
+            <li>
+              <h3>Insurance support and compliance</h3>
+              <p>Supported insurance operations through accurate claims processing, policy administration, renewals,
+                and reconciliations while ensuring compliance with client requirements.</p>
+            </li>
+            <li>
+              <h3>Technical training and knowledge transfer</h3>
+              <p>Delivered technical training and knowledge-transfer sessions for new team members, improving process
+                understanding, productivity, and onboarding efficiency.</p>
+            </li>
+            <li>
+              <h3>HR operations and records management</h3>
+              <p>Managed and maintained accurate employee records, contracts, personal files, and HR documentation for
+                100+ employees. Successfully coordinated end-to-end employee onboarding and offboarding, ensuring
+                timely completion of documentation and clearance procedures.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certificates">
+          <h2>Certifications</h2>
+          <div class="entry">
+            <h3>Tally ERP 9 – Professional Certification</h3>
+            <p>Training in digital financial accounting, ledger maintenance, and financial reporting.</p>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+          <h2>Projects and internships</h2>
+          <div class="entry">
+            <h3>MBA Research Project: Employee Safety &amp; Welfare</h3>
+            <p>Penta Auto Equipments Pvt Ltd; conducted employee surveys, stakeholder interviews, and statistical
+              analysis.</p>
+          </div>
+          <div class="entry">
+            <h3>MBA Summer Internship: Malabar Cements Ltd</h3>
+            <p>Conducted cross-departmental operational analysis covering Finance, Marketing, Production,
+              Procurement, and Logistics.</p>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+          <h2>Contact</h2>
+          <dl class="contact-list">
+            <dt>Email</dt>
+            <dd><a href="mailto:syedmusharaf936@gmail.com">syedmusharaf936@gmail.com</a></dd>
+            <dt>Phone</dt>
+            <dd><a href="tel:+971564268547">+971 564268547</a></dd>
+            <dt>LinkedIn</dt>
+            <dd><a href="https://linkedin.com/in/syed-musharaf-a-56475a208" target="_blank"
+                rel="noopener noreferrer">linkedin.com/in/syed-musharaf-a-56475a208</a></dd>
+            <dt>Location</dt>
+            <dd>Dubai, UAE</dd>
+          </dl>
+
+          <div class="languages" id="languages">
+            <h3>Languages</h3>
+            <ul class="tags">
+              <li>English</li>
+              <li>Hindi</li>
+              <li>Tamil</li>
+              <li>Malayalam</li>
+              <li>Urdu</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer>© Syed Musharaf A</footer>
+
       </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="section-label">About</div>
-    <h2 class="section-title">About Me</h2>
-    <p class="about-text">
-      MBA graduate in Finance and HR with 6+ years of experience in General Accounting and Financial Operations across
-      the
-      UAE and India, including prior exposure to Insurance and HR Operations. Experienced in Accounts Payable (AP),
-      Accounts Receivable (AR), bank reconciliations, vendor reconciliations, General Ledger maintenance, invoice
-      processing, and financial documentation. Proficient in Tally ERP, Fresa, MS Office Tools, and Oracle HCM.
-      Recognized for maintaining over 98% processing accuracy, ensuring compliance and data integrity, and collaborating
-      with cross-functional teams to deliver efficient financial and administrative support.
-    </p>
-    <div class="about-stats">
-      <a class="stat" href="#experience">
-        <div class="num">6+</div>
-        <div class="lbl">Years Experience</div>
-      </a>
-      <a class="stat" href="#experience">
-        <div class="num">3</div>
-        <div class="lbl">Domains: Accounting, Insurance, HR</div>
-      </a>
-      <a class="stat" href="#languages">
-        <div class="num">5</div>
-        <div class="lbl">Languages Spoken</div>
-      </a>
-      <a class="stat" href="#education">
-        <div class="num">MBA</div>
-        <div class="lbl">Finance &amp; HR</div>
-      </a>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="section-label">Career</div>
-    <h2 class="section-title">Professional Experience</h2>
-
-    <div class="exp-card">
-      <div class="exp-top">
-        <span class="exp-role">General Accountant</span>
-        <span class="exp-period">Feb 2025 — Present</span>
-      </div>
-      <div class="exp-org">Marakish Express Cargo · Dubai, UAE</div>
-      <ul>
-        <li>Process invoices, journal entries, and core financial transactions while ensuring accuracy and compliance
-          with UAE accounting requirements.</li>
-        <li>Maintain and reconcile the General Ledger (GL), ensuring accuracy and integrity of financial records and
-          supporting financial reporting.</li>
-        <li>Manage Accounts Payable (AP) and Accounts Receivable (AR), including invoice verification, payment
-          processing, customer collections, and vendor account reconciliation.</li>
-        <li>Prepare bank reconciliations and support month-end and year-end closing activities by maintaining accurate
-          financial documentation and reconciliation schedules.</li>
-        <li>Assist in preparing financial reports, submission of UAE VAT and Corporate Tax returns.</li>
-        <li>Collaborate with senior accountants and cross-functional departments to improve accounting workflows and
-          ensure timely financial processing.</li>
-      </ul>
-    </div>
-
-    <div class="exp-card">
-      <div class="exp-top">
-        <span class="exp-role">Process Associate — US HR Operations</span>
-        <span class="exp-period">May 2022 — May 2024</span>
-      </div>
-      <div class="exp-org">Eurofins (BPO) India Pvt Ltd · Bengaluru, India</div>
-      <ul>
-        <li>Managed the employee lifecycle for US employees, including onboarding, job transitions, offboarding, and
-          termination processing for 100+ employee cases while ensuring compliance with organizational policies.</li>
-        <li>Maintained, audited, and updated employee records, attendance, and HRIS databases, ensuring data accuracy,
-          confidentiality, and compliance.</li>
-        <li>Served as a primary HR point of contact for US-based employees, resolving HR inquiries, policy
-          clarifications, and employee requests while delivering high-quality customer service.</li>
-        <li>Supported payroll administration, benefits administration, leave management, and employee data validation in
-          accordance with company policies and US labor requirements.</li>
-        <li>Developed and maintained Standard Operating Procedures (SOPs), generated HR reports and dashboards, and
-          provided accurate workforce data to support leadership decision-making and process improvements.</li>
-      </ul>
-    </div>
-
-    <div class="exp-card">
-      <div class="exp-top">
-        <span class="exp-role">Sr. Transaction Processing Officer</span>
-        <span class="exp-period">Oct 2019 — Jan 2022</span>
-      </div>
-      <div class="exp-org">Mphasis Ltd · Bengaluru, India</div>
-      <ul>
-        <li>Supported UK Motor and UAE Property insurance operations by processing policy quotations, renewals,
-          endorsements, and mid-term adjustments while ensuring adherence to client and regulatory requirements.</li>
-        <li>Managed confidential policy documentation and customer records, maintaining data accuracy, security, and
-          compliance with organizational standards.</li>
-        <li>Served as a primary point of contact for policyholders, resolving inquiries, providing policy-related
-          support, and delivering high-quality customer service.</li>
-        <li>Processed insurance claims efficiently and accurately, ensuring timely settlement in accordance with
-          established procedures and service-level agreements (SLAs).</li>
-        <li>Performed claims reconciliation and policy validation to maintain financial data integrity, achieving and
-          consistently maintaining more than 98% processing accuracy.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="section-label">Academics</div>
-    <h2 class="section-title">Education</h2>
-
-    <div class="edu-card">
-      <div class="edu-top">
-        <span class="edu-degree">Master of Business Administration (MBA) — Finance &amp; HR </span>
-        <span class="edu-years">2017 — 2019</span>
-      </div>
-      <div class="edu-school">PPG Business School, Coimbatore (Anna University)</div>
-    </div>
-
-    <div class="edu-card">
-      <div class="edu-top">
-        <span class="edu-degree">Bachelor of Commerce (BCom) — Computer Application</span>
-        <span class="edu-years">2014 — 2017</span>
-      </div>
-      <div class="edu-school">Erode Arts and Science College, Erode (Bharathiar University)</div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="section-label">Capabilities</div>
-    <h2 class="section-title">Core Skills</h2>
-
-    <div class="skills-grid">
-      <div class="skill-group">
-        <span class="g-label">Accounting Systems &amp; Functions</span>
-        <div class="chip-row">
-          <span class="chip">Tally ERP</span>
-          <span class="chip">Fresa</span>
-          <span class="chip">Accounts Payable (AP)</span>
-          <span class="chip">Accounts Receivable (AR)</span>
-          <span class="chip">General Ledger (GL)</span>
-          <span class="chip">Bank Reconciliation</span>
-          <span class="chip">Financial Reporting</span>
-          <span class="chip">UAE VAT Support &amp; Compliance</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <span class="g-label">Insurance Operations</span>
-        <div class="chip-row">
-          <span class="chip">Claims Processing</span>
-          <span class="chip">Policy Administration</span>
-          <span class="chip">Renewals Management</span>
-          <span class="chip">Mid-Term Adjustments</span>
-          <span class="chip">SLAs</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <span class="g-label">HR Systems &amp; Functions</span>
-        <div class="chip-row">
-          <span class="chip">Oracle HCM</span>
-          <span class="chip">HRIS</span>
-          <span class="chip">Employee Lifecycle Management</span>
-          <span class="chip">Onboarding &amp; Offboarding</span>
-          <span class="chip">Payroll Support</span>
-          <span class="chip">Benefits Administration</span>
-          <span class="chip">Attendance Management</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <span class="g-label">Technical Skills</span>
-        <div class="chip-row">
-          <span class="chip">MS Excel (XLOOKUP, VLOOKUP)</span>
-          <span class="chip">Pivot Tables</span>
-          <span class="chip">Dashboards</span>
-          <span class="chip">Microsoft Word</span>
-          <span class="chip">PowerPoint</span>
-          <span class="chip">Outlook</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="soft-grid">
-      <div class="soft-item">Leadership &amp; Communication</div>
-      <div class="soft-item">Analytical Thinking &amp; Problem Solving</div>
-      <div class="soft-item">Attention to Detail &amp; Confidentiality</div>
-      <div class="soft-item">Time Management &amp; Multitasking</div>
-      <div class="soft-item">Team Collaboration &amp; Compliance</div>
-    </div>
-  </section>
-
-  <section id="achievements">
-    <div class="section-label">Recognition</div>
-    <h2 class="section-title">Key Achievements</h2>
-
-    <div class="ach-card">
-      <div class="ach-title">High Accuracy &amp; Quality Excellence</div>
-      <div class="ach-desc">Maintained over 98% processing accuracy across financial transactions, AP/AR
-        reconciliations, and general accounting activities while ensuring compliance with organizational standards.
-      </div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-title">Process Improvement &amp; Operational Efficiency</div>
-      <div class="ach-desc">Identified and implemented process improvements across accounting and financial operations,
-        enhancing workflow efficiency, data accuracy, and timely completion of activities.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-title">Data Integrity &amp; Confidentiality</div>
-      <div class="ach-desc">Maintained high standards of financial documentation, data integrity, and confidentiality
-        while handling accounting records, reconciliations, invoices, and financial transactions.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-title">Cross-Functional Collaboration</div>
-      <div class="ach-desc">Applied analytical and problem-solving skills to resolve accounting and operational issues
-        while collaborating with Finance and Operations teams to improve service delivery.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-title">Insurance Support &amp; Compliance</div>
-      <div class="ach-desc">Supported insurance operations through accurate claims processing, policy administration,
-        renewals, and reconciliations while ensuring compliance with client requirements.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-title">Technical Training &amp; Knowledge Transfer</div>
-      <div class="ach-desc">Delivered technical training and knowledge-transfer sessions for new team members, improving
-        process understanding, productivity, and onboarding efficiency.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-title">HR Operations &amp; Records Management</div>
-      <div class="ach-desc">Managed and maintained accurate employee records, contracts, personal files, and HR
-        documentation for 100+ employees. Successfully coordinated end-to-end employee onboarding and offboarding,
-        ensuring timely completion of documentation and clearance procedures.</div>
-    </div>
-  </section>
-
-  <section id="certificates">
-    <div class="section-label">Professional Credentials</div>
-    <h2 class="section-title">Certifications</h2>
-    <div class="ach-card">
-      <div class="ach-title">Tally ERP 9 — Professional Certification</div>
-      <div class="ach-desc">Training in digital financial accounting, ledger maintenance, and financial reporting.</div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="section-label">Academic Work</div>
-    <h2 class="section-title">Projects &amp; Internships</h2>
-    <div class="ach-card">
-      <div class="ach-title">MBA Research Project: Employee Safety &amp; Welfare</div>
-      <div class="ach-desc">Penta Auto Equipments Pvt Ltd; conducted employee surveys, stakeholder interviews, and
-        statistical analysis.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-title">MBA Summer Internship: Malabar Cements Ltd</div>
-      <div class="ach-desc">Conducted cross-departmental operational analysis covering Finance, Marketing, Production,
-        Procurement, and Logistics.</div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="section-label">Get In Touch</div>
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-card">
-      <div class="contact-item">
-        <div class="label">Email</div>
-        <div class="value">
-          <a href="mailto:syedmusharaf936@gmail.com">syedmusharaf936@gmail.com</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="label">Phone</div>
-        <div class="value">
-          <a href="tel:+971564268547">+971 564268547</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="label">LinkedIn</div>
-        <div class="value">
-          <a href="https://linkedin.com/in/syed-musharaf-a-56475a208" target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/syed-musharaf-a-56475a208
-          </a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="label">Location</div>
-        <div class="value">Dubai, UAE</div>
-      </div>
-    </div>
-    <div class="lang-row" id="languages">
-      <span class="chip">English</span>
-      <span class="chip">Hindi</span>
-      <span class="chip">Tamil</span>
-      <span class="chip">Malayalam</span>
-      <span class="chip">Urdu</span>
-    </div>
-  </section>
-
-  <footer>© SYED MUSHARAF A</footer>
+    </main>
+  </div>
 
   <script>
-    const sections = document.querySelectorAll("section[id]");
-    const links = document.querySelectorAll(".nav-links a:not(.nav-resume-btn)");
+    const sections = document.querySelectorAll("main section[id]");
+    const links = document.querySelectorAll(".side-nav a");
 
     const setActive = (id) => {
       links.forEach((link) => {
-        if (link.getAttribute("href").startsWith("#")) {
-          link.classList.toggle("active", link.getAttribute("href") === "#" + id);
-        }
+        link.classList.toggle("active", link.getAttribute("href") === "#" + id);
       });
     };
-
-    setActive("home");
 
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
@@ -1191,7 +1035,7 @@
             if (entry.isIntersecting) setActive(entry.target.id);
           });
         },
-        { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
       );
       sections.forEach((sec) => observer.observe(sec));
     }

@@ -124,7 +124,7 @@
       box-shadow: 0 0 15px rgba(0, 195, 255, 0.35);
     }
 
-    /* ---------- Sections Base ---------- */
+    /* ---------- Base Sections ---------- */
     section {
       padding: clamp(3rem, 6vw, 4.8rem) clamp(1.2rem, 5vw, 4rem);
       max-width: 1180px;
@@ -173,10 +173,9 @@
       margin-bottom: 1.2rem;
     }
 
-    /* Strict single-line name heading */
     .hero-name {
       font-family: var(--font-display);
-      font-size: clamp(1.9rem, 4.6vw, 4.2rem);
+      font-size: clamp(1.85rem, 4.5vw, 4.2rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       color: #7ef5bd;
@@ -186,10 +185,9 @@
       text-overflow: clip;
     }
 
-    /* Strict single-line subtitle */
     .hero-subtitle {
       font-family: var(--font-body);
-      font-size: clamp(0.72rem, 1.4vw, 1.05rem);
+      font-size: clamp(0.72rem, 1.35vw, 1.05rem);
       font-weight: 600;
       color: #b9d2e6;
       letter-spacing: 0.07em;
@@ -207,7 +205,7 @@
       text-align: left;
     }
 
-    /* Badges structured so 98%+ Accuracy sits next to General Accountant */
+    /* Badges Layout */
     .hero-badges-wrapper {
       display: flex;
       flex-direction: column;
@@ -310,7 +308,7 @@
       object-fit: cover;
     }
 
-    /* ---------- Cards & Content ---------- */
+    /* ---------- Stats ---------- */
     .about-stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -341,6 +339,7 @@
       margin-top: 0.4rem;
     }
 
+    /* ---------- Experience & Academic Cards ---------- */
     .exp-card,
     .edu-card,
     .ach-card {
@@ -417,7 +416,7 @@
       color: var(--green);
     }
 
-    /* ---------- Skills Grid ---------- */
+    /* ---------- Skills & Soft Skills ---------- */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -460,25 +459,32 @@
       white-space: nowrap;
     }
 
+    /* Soft Skills: Single Row on Desktop with balanced wrapping on Mobile */
     .soft-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0.8rem;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: clamp(0.4rem, 0.9vw, 0.75rem);
       padding-top: 1.5rem;
       border-top: 1px solid var(--line);
+      width: 100%;
     }
 
     .soft-item {
-      font-size: 0.88rem;
+      font-size: clamp(0.72rem, 0.88vw, 0.86rem);
       color: var(--text-dim);
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
-      padding: 0.55rem 0.85rem;
-      border: 1px solid rgba(146, 160, 173, 0.16);
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.5rem clamp(0.55rem, 0.85vw, 0.85rem);
+      border: 1px solid rgba(146, 160, 173, 0.18);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.02);
       white-space: nowrap;
+      flex: 1 1 auto;
+      text-align: center;
     }
 
     .soft-item::before {
@@ -488,6 +494,7 @@
       flex-shrink: 0;
     }
 
+    /* ---------- Achievements & Details ---------- */
     .ach-title {
       font-family: var(--font-display);
       font-weight: 600;
@@ -554,12 +561,25 @@
     }
 
     /* ====================================================
-       MOBILE PRECISION ALIGNMENT (Viewport < 768px)
+       RESPONSIVE DESIGN (Tablets & Mobile)
        ==================================================== */
+    @media (max-width: 900px) {
+      .soft-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.55rem;
+      }
+
+      .soft-item {
+        flex: 0 1 calc(50% - 0.55rem);
+        font-size: 0.76rem;
+        padding: 0.45rem 0.65rem;
+      }
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none;
-        /* Removes stacked/scrolling navigation clutter on mobile */
       }
 
       .navbar {
@@ -587,13 +607,11 @@
         text-align: left;
       }
 
-      /* Exact fit single line name */
       .hero-name {
         font-size: clamp(1.5rem, 6.7vw, 2.2rem);
         letter-spacing: -0.01em;
       }
 
-      /* Exact fit single line title */
       .hero-subtitle {
         font-size: clamp(0.6rem, 2.7vw, 0.78rem);
         letter-spacing: 0.05em;
@@ -658,22 +676,23 @@
         padding: 1.25rem;
       }
 
-      .soft-grid {
-        grid-template-columns: 1fr;
-        gap: 0.55rem;
-      }
-
       .contact-card {
         grid-template-columns: 1fr;
         gap: 1.2rem;
         padding: 1.3rem;
       }
     }
+
+    @media (max-width: 480px) {
+      .soft-item {
+        flex: 1 1 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- FIXED CLEAN NAVBAR -->
+  <!-- FIXED NAVBAR -->
   <nav class="navbar">
     <div class="nav-brand">SYED MUSHARAF A</div>
     <ul class="nav-links">
@@ -712,7 +731,7 @@
           cross-functional teams to deliver efficient financial and administrative support.
         </p>
 
-        <!-- BADGES ROW-PAIRED: 98%+ Accuracy paired with General Accountant -->
+        <!-- BADGES: 98%+ Accuracy paired with General Accountant -->
         <div class="hero-badges-wrapper">
           <div class="badge-row">
             <span class="badge-chip">📍 Dubai, UAE</span>
@@ -900,6 +919,7 @@
       </div>
     </div>
 
+    <!-- Soft Skills: Single Row with Problem Solving inline -->
     <div class="soft-grid">
       <div class="soft-item">Leadership &amp; Communication</div>
       <div class="soft-item">Analytical Thinking</div>

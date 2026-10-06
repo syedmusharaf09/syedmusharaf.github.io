@@ -118,9 +118,9 @@
     }
 
     .nav-resume-btn {
-      border: 1.5px solid var(--teal) !important;
-      color: var(--teal) !important;
-      background: rgba(0, 195, 255, 0.08);
+      border: 1.5px solid #ff5f57 !important;
+      color: #ff5f57 !important;
+      background: rgba(255, 95, 87, 0.08);
       padding: 0.45rem 1rem !important;
       border-radius: 8px;
       font-weight: 600 !important;
@@ -132,10 +132,22 @@
       transition: all 0.25s ease;
     }
 
+    .nav-resume-btn .resume-icon {
+      width: 0.95rem;
+      height: 0.95rem;
+      display: inline-block;
+      color: currentColor;
+      flex-shrink: 0;
+    }
+
+    .nav-resume-btn .resume-icon path {
+      fill: currentColor;
+    }
+
     .nav-resume-btn:hover {
-      background: var(--teal) !important;
-      color: var(--bg) !important;
-      box-shadow: 0 0 15px rgba(0, 195, 255, 0.35);
+      background: #ff5f57 !important;
+      color: #0b1115 !important;
+      box-shadow: 0 0 15px rgba(255, 95, 87, 0.35);
     }
 
     /* ---------- Base Sections ---------- */
@@ -820,7 +832,10 @@
       <ul class="nav-links">
         <li><a href="SyedMusharafAnverjan_Accountant_Resume.pdf" download="SyedMusharafAnverjan_Accountant_Resume.pdf"
             target="_blank" class="nav-resume-btn">
-            📄 Resume
+            <svg class="resume-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3.5a1 1 0 0 1 1 1v8.59l2.72-2.72a1 1 0 1 1 1.41 1.41l-4.42 4.42a1 1 0 0 1-1.41 0l-4.42-4.42a1 1 0 0 1 1.41-1.41L11 13.09V4.5a1 1 0 0 1 1-1Zm-7 14a1 1 0 0 1 1 1v.5h12v-.5a1 1 0 1 1 2 0v.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-.5a1 1 0 0 1 1-1Z"/>
+            </svg>
+            <span>Download Resume</span>
           </a></li>
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
